@@ -1,16 +1,5 @@
 # Hello
 
-### Aufgaben 3.1 Tensoren
-
-In directory ```/2nd_assignment/3_1_tensors```, every file is a python executable.
-
-Answers are in the documentation 
-```
-"""
-    within the code and look like this.
-"""
-```
-
 ### Aufgabe 3.2 Multilayer Perceptron
 
 In directory ```/2nd_assignment/eml```, run ```python3 main.py``` to start the model, evaluation and visualization.
