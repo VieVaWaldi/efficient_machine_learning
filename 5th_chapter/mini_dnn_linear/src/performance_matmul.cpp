@@ -4,6 +4,7 @@
 #include "io/Logging.hpp"
 #include "backend/MatmulReluAten.h"
 #include "backend/MatmulLibxsmm.h"
+#include "backend/MatmulReluLibxsmm.h"
 
 /**
  * Measures the performance (time) of the given matmul implementation.
@@ -94,9 +95,9 @@ int main()
   MINI_DNN_LOG_INFO << "running performance tests" << std::endl;
 
   // sizes of the input
-  int64_t l_size_n = 128;
+  int64_t l_size_n = 256;
   int64_t l_size_k = 768;
-  int64_t l_size_c = 512;
+  int64_t l_size_c = 4069;
 
   int64_t l_size_bn = 64;
   int64_t l_size_bk = 16;
@@ -166,9 +167,9 @@ int main()
   MINI_DNN_LOG_INFO << "  FP32 GFLOPS:         " << l_gflops << std::endl;
 
   /*
-   * MatmulLibxsmm
+   * MatmulReluLibxsmm
    */
-  MINI_DNN_LOG_INFO << "benchmarking ReluMatmulLibxsmm.." << std::endl;
+  MINI_DNN_LOG_INFO << "benchmarking MatmulReluLibxsmm.." << std::endl;
   mini_dnn::backend::MatmulReluLibxsmm l_matmul_relu_libxsmm;
 
   std::tie(l_n_repetitions,

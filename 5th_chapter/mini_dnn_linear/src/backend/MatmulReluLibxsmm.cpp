@@ -1,7 +1,7 @@
 #include "MatmulReluLibxsmm.h"
 #include <libxsmm.h>
 
-at::Tensor mini_dnn::backend::MatmulLibxsmm::forward( at::Tensor i_x,
+at::Tensor mini_dnn::backend::MatmulReluLibxsmm::forward( at::Tensor i_x,
                                                       at::Tensor i_w ) {
   // get involved sizes
   Matmul::Sizes l_sizes = Matmul::getSizes( i_x,
@@ -42,7 +42,7 @@ at::Tensor mini_dnn::backend::MatmulLibxsmm::forward( at::Tensor i_x,
 																			  
    libxsmm_meltwfunction_unary l_relu = libxsmm_dispatch_meltw_unary_v2( LIBXSMM_MELTW_TYPE_UNARY_RELU,
 																		  l_unary_shape,
-																		  LIBXSMM_MELTW_FLAG_NONE );
+																		  LIBXSMM_GEMM_FLAG_NONE );
 	
 
   libxsmm_gemm_batch_reduce_config l_brconfig;
@@ -58,12 +58,14 @@ at::Tensor mini_dnn::backend::MatmulLibxsmm::forward( at::Tensor i_x,
                                                       l_brconfig );
 
   libxsmm_gemm_param l_param;
+  libxsmm_meltw_unary_param l_param_relu;
   memset( &l_param,
           0,
           sizeof(libxsmm_gemm_param) );
 
   // prepare data for blocked LIBXSMM calls
   at::Tensor l_y = at::zeros( {l_sizes.kb, l_sizes.nb, l_sizes.bk, l_sizes.bn} );
+  at::Tensor l_y_relu =  at::zeros( {l_sizes.kb, l_sizes.nb, l_sizes.bk, l_sizes.bn} );
 
   c10::IntArrayRef l_strides_a = i_x.strides();
   c10::IntArrayRef l_strides_b = i_w.strides();
@@ -94,13 +96,13 @@ at::Tensor mini_dnn::backend::MatmulLibxsmm::forward( at::Tensor i_x,
         l_kernel_forward.gemm( &l_param );
       }
 	  
-	  l_param.in.primary = (float *) l_ptr_c.data_ptr() +  l_offset_c * l_i;
-	  l_param.out.primary = (float *) l_ptr_c.data_ptr()+ l_offset_c * l_i;
+	  l_param_relu.in.primary = (float *) l_y.data_ptr() +  l_strides_c[0] * l_nb;
+	  l_param_relu.out.primary = (float *) l_y_relu.data_ptr() + l_strides_c[0] * l_nb;
 	  
 	  //call kernel
-	  l_relu( &l_param);
+	  l_relu( &l_param_relu);
     }
   }
 
-  return l_y;
+  return l_y_relu;
 }

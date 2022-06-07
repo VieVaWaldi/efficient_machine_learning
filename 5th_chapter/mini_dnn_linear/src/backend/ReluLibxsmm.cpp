@@ -27,7 +27,7 @@ at::Tensor mini_dnn::backend::ReluLibxsmm::forward( at::Tensor i_input)
 																		  LIBXSMM_MELTW_FLAG_NONE );
 	
 	//prepare data  for LIBXSMM calls
-	at::Tensor l_output =  at::empty( i_input.size());
+	at::Tensor l_output = at::empty( i_input.size());
 	
 	#pragma omp parallel for
 	for( int64_t l_i = 0; l_i < l_sizes_input_3d[0]; l_i++ )
