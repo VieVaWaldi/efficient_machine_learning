@@ -4,7 +4,7 @@ Hello, each task in the assignments are their own self contained project and hav
 
 **/1st_chapter:** Steppest Descent and optimization
 
-**/2nd_chapter:** No tasks that can be shown here but i started a job on ookami chapter 3 :)
+**/2nd_chapter:** No tasks that can be shown here but i started a job on ookami in chapter 3 :)
 
 **/3d_chapter:** Tensors and MLP aus Kapitel 3
 
@@ -14,4 +14,4 @@ Hello, each task in the assignments are their own self contained project and hav
 **/5th_chapter:** Linear Layers on Steroids
 
 * 5.1 und 5.2 were provided by you
-* 5.3 was just pushed, Attached are the images to the benchmarks
+* 5.3 was just pushed, attached are the images to the benchmarks
