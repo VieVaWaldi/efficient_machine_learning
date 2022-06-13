@@ -19,7 +19,7 @@ TEST_CASE("Tests the convolution operator going through blocked at::matmul.",
     int64_t l_size_s = 3; // s = w_width
 
     int64_t l_size_bc = 1; // bc = block input_channels
-    int64_t l_size_bk = 2; // bk = block output_channels
+    int64_t l_size_bk = 1; // bk = block output_channels
 
     int64_t l_size_cb = l_size_c / l_size_bc;
     int64_t l_size_kb = l_size_k / l_size_bk;
@@ -50,8 +50,8 @@ TEST_CASE("Tests the convolution operator going through blocked at::matmul.",
                                                          l_w_blocked);
 
     // reverse blocking
-    at::Tensor l_y = l_y_blocked.permute( {0, 1, 4, 2, 3} ).contiguous();
-    l_y = l_y.view( { l_size_n, l_size_k, l_size_p, l_size_q } );
+    at::Tensor l_y = l_y_blocked.permute({0, 1, 4, 2, 3}).contiguous();
+    l_y = l_y.view({l_size_n, l_size_k, l_size_p, l_size_q});
 
     // compute reference
     at::Tensor l_y_reference = at::conv2d(l_x,

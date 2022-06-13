@@ -46,7 +46,7 @@ conv2dAtenBlocked: conv2d src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2d
 # 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dLibxsmm.cpp -o ${BUILD_DIR}/backend/Conv2dLibxsmm.o
 # 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dLibxsmm.test.cpp -o ${BUILD_DIR}/tests/Conv2dLibxsmm.test.o
 
-all: relu conv2d conv2dAtenBlocked conv2dLibxsmm
+all: relu conv2d conv2dAtenBlocked # conv2dLibxsmm
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/test.cpp ${BUILD_DIR}/backend/*.o ${BUILD_DIR}/tests/*.o -o ${BUILD_DIR}/test ${RPATHS} ${LDFLAGS}
 
 $(shell mkdir -p build/backend)
