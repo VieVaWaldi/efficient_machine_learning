@@ -3,7 +3,7 @@ CXXFLAGS ?=
 LDFLAGS ?=
 RPATHS ?=
 LIBXSMM_DIR ?= libxsmm
-OPTIONS = -O2 -std=c++20 -pedantic -Wall -Wextra -DTORCH_API_INCLUDE_EXTENSION_H -I.
+OPTIONS = -O2 -std=c++17 -pedantic -Wall -Wextra -DTORCH_API_INCLUDE_EXTENSION_H -I.
 
 PYTORCH_INCLUDE = $(shell python -c 'from torch.utils.cpp_extension import include_paths; [print(p) for p in include_paths()]')
 PYTORCH_LINK = $(shell python -c 'from torch.utils.cpp_extension import library_paths; [print(p) for p in library_paths()]')
@@ -34,7 +34,19 @@ conv2d: relu src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dAten.cpp src/
 
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/performance_conv2d.cpp ${BUILD_DIR}/backend/Relu*.o ${BUILD_DIR}/backend/Conv2d*.o -o ${BUILD_DIR}/performance_conv2d ${RPATHS} ${LDFLAGS}
 
-all: relu conv2d
+conv2dAtenBlocked: conv2d src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dAtenBlocked.cpp src/backend/Conv2dAtenBlocked.test.cpp
+		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2d.test.cpp -o ${BUILD_DIR}/tests/Conv2d.test.o
+
+		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dAtenBlocked.cpp -o ${BUILD_DIR}/backend/Conv2dAtenBlocked.o
+		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dAtenBlocked.test.cpp -o ${BUILD_DIR}/tests/Conv2dAtenBlocked.test.o
+
+# conv2dLibxsmm: conv2d src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dLibxsmm.cpp src/backend/Conv2dLibxsmm.test.cpp
+# 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2d.test.cpp -o ${BUILD_DIR}/tests/Conv2d.test.o
+
+# 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dLibxsmm.cpp -o ${BUILD_DIR}/backend/Conv2dLibxsmm.o
+# 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dLibxsmm.test.cpp -o ${BUILD_DIR}/tests/Conv2dLibxsmm.test.o
+
+all: relu conv2d conv2dAtenBlocked conv2dLibxsmm
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/test.cpp ${BUILD_DIR}/backend/*.o ${BUILD_DIR}/tests/*.o -o ${BUILD_DIR}/test ${RPATHS} ${LDFLAGS}
 
 $(shell mkdir -p build/backend)
