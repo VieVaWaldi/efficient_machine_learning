@@ -97,7 +97,7 @@ int main()
   // sizes of the input
   int64_t l_size_n = 256;
   int64_t l_size_k = 768;
-  int64_t l_size_c = 4069;
+  int64_t l_size_c = 4096;
 
   int64_t l_size_bn = 64;
   int64_t l_size_bk = 16;

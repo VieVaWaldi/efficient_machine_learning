@@ -97,12 +97,12 @@ at::Tensor mini_dnn::backend::MatmulReluLibxsmm::forward( at::Tensor i_x,
       }
 	  
 	  l_param_relu.in.primary = (float *) l_y.data_ptr() +  l_strides_c[0] * l_nb;
-	  l_param_relu.out.primary = (float *) l_y_relu.data_ptr() + l_strides_c[0] * l_nb;
+	  l_param_relu.out.primary = (float *) l_y.data_ptr() + l_strides_c[0] * l_nb;
 	  
 	  //call kernel
 	  l_relu( &l_param_relu);
     }
   }
 
-  return l_y_relu;
+  return l_y;
 }
