@@ -1,7 +1,7 @@
 #include <catch2/catch.hpp>
-#include "Conv2dLibxsmm.h"
+#include "Conv2dReluLibxsmm.h"
 
-TEST_CASE("Tests the Conv2dLibxsmm",
+TEST_CASE("Tests the Conv2dReluLibxsmm",
           "[conv2d][conv2dAtenBlocked][forward]")
 {
     // input sizes
@@ -43,7 +43,7 @@ TEST_CASE("Tests the Conv2dLibxsmm",
     l_weight_blocked = l_weight_blocked.permute({0, 2, 4, 5, 3, 1}).contiguous();
 
     // compute solution
-    mini_dnn::backend::Conv2dLibxsmm l_kernel;
+    mini_dnn::backend::Conv2dReluLibxsmm l_kernel;
     at::Tensor l_output_blocked = l_kernel.forward(l_input_blocked,
                                                    l_weight_blocked);
 
