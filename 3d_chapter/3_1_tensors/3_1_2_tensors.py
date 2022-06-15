@@ -1,7 +1,7 @@
 import torch
 
 """
-    Task 1: Elemtwise operation on P and Q with add and mul, also overload.
+    Task 1: Elementwise operation on P and Q with add and mul, also overload.
 """
 print("### Task 1 ###\n")
 

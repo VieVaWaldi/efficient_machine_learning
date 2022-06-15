@@ -35,16 +35,13 @@ conv2d: relu src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dAten.cpp src/
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/performance_conv2d.cpp ${BUILD_DIR}/backend/Relu*.o ${BUILD_DIR}/backend/Conv2d*.o -o ${BUILD_DIR}/performance_conv2d ${RPATHS} ${LDFLAGS}
 
 conv2dAtenBlocked: src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dAtenBlocked.cpp src/backend/Conv2dAtenBlocked.test.cpp
-		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2d.test.cpp -o ${BUILD_DIR}/tests/Conv2d.test.o
-
 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dAtenBlocked.cpp -o ${BUILD_DIR}/backend/Conv2dAtenBlocked.o
 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dAtenBlocked.test.cpp -o ${BUILD_DIR}/tests/Conv2dAtenBlocked.test.o
 
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/test.cpp ${BUILD_DIR}/backend/*.o ${BUILD_DIR}/tests/*.o -o ${BUILD_DIR}/test ${RPATHS} ${LDFLAGS}
-
-conv2dLibxsmm: src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dLibxsmm.cpp src/backend/Conv2dLibxsmm.test.cpp src/backend/Conv2dReluLibxsmm.cpp src/backend/Conv2dReluLibxsmm.test.cpp
 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2d.test.cpp -o ${BUILD_DIR}/tests/Conv2d.test.o
 
+conv2dLibxsmm: src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dLibxsmm.cpp src/backend/Conv2dLibxsmm.test.cpp src/backend/Conv2dReluLibxsmm.cpp src/backend/Conv2dReluLibxsmm.test.cpp
 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dLibxsmm.cpp -I${LIBXSMM_DIR}/include -o ${BUILD_DIR}/backend/Conv2dLibxsmm.o
 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dLibxsmm.test.cpp -o ${BUILD_DIR}/tests/Conv2dLibxsmm.test.o
 
@@ -52,6 +49,7 @@ conv2dLibxsmm: src/test.cpp src/backend/Conv2d.hpp src/backend/Conv2dLibxsmm.cpp
 		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2dReluLibxsmm.test.cpp -o ${BUILD_DIR}/tests/Conv2dReluLibxsmm.test.o
 
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/test.cpp ${BUILD_DIR}/backend/*.o ${BUILD_DIR}/tests/*.o -o ${BUILD_DIR}/test ${RPATHS} ${LDFLAGS}
+		$(CXX) ${OPTIONS} ${CXXFLAGS} -c src/backend/Conv2d.test.cpp -o ${BUILD_DIR}/tests/Conv2d.test.o
 
 all: relu conv2d conv2dAtenBlocked conv2dLibxsmm
 		$(CXX) ${OPTIONS} ${CXXFLAGS} src/test.cpp ${BUILD_DIR}/backend/*.o ${BUILD_DIR}/tests/*.o -o ${BUILD_DIR}/test ${RPATHS} ${LDFLAGS}
