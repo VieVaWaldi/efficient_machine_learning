@@ -25,9 +25,15 @@ at::Tensor mini_dnn::backend::Conv2dAtenBlocked::forward( at::Tensor i_x,
             int64_t l_h  = l_p + l_r - 1;
             for( int64_t l_s = 0; l_s < l_sizes.s; l_s++ ) {
 
+              // w und h verschwinden in q
+              // auf p und q r uns multiplizieren
+
+              // auf gleiche indizes in x wie in y zugreifen
+              // in w eins nach rechts bedeutet in s eins nach rechts
+
               int64_t l_w  = l_helper + l_s - 1;
-              l_output[l_n][l_kb][l_p]+= at::matmul( i_w[l_kb][l_cb][l_r][l_s],
-                                      i_x[l_n][l_cb][l_h][l_w]);
+              l_output[l_n][l_kb][l_p] += at::matmul( i_w[l_kb][l_cb][l_r][l_s],
+                                                      i_x[l_n][l_cb][l_h][l_w]);
             }          
           }
 	      }

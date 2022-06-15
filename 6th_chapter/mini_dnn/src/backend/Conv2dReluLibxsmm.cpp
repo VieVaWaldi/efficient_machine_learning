@@ -19,7 +19,7 @@ at::Tensor mini_dnn::backend::Conv2dReluLibxsmm::forward( at::Tensor i_x,
 
   libxsmm_blasint l_m = 1;
   libxsmm_blasint l_n = l_sizes.bk;
-  libxsmm_blasint l_k = l_sizes.bc;
+  libxsmm_blasint l_k = l_sizes.bc; // bc und bq also 128 32 und bk 64
 
   libxsmm_blasint l_lda = l_m;
   libxsmm_blasint l_ldb = l_k;
