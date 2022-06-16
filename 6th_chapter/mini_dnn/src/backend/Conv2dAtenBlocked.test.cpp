@@ -62,9 +62,11 @@ TEST_CASE("Tests the convolution operator going through blocked at::matmul.",
     at::Tensor l_y_reference = at::conv2d(l_x,
                                           l_w);
 
+    std::cout << "\n--- l_y -------------------------------------\n" << std::endl;
     std::cout << "l_y " << l_y.sizes() << std::endl;
     std::cout << l_y << std::endl;
 
+    std::cout << "\n--- l_y_ref -------------------------------------\n" << std::endl;
     std::cout << "l_y_reference " << l_y_reference.sizes() << std::endl;
     std::cout << l_y_reference << std::endl;
 

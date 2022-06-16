@@ -17,9 +17,9 @@ at::Tensor mini_dnn::backend::Conv2dLibxsmm::forward( at::Tensor i_x,
   // libxsmm_blasint l_lda = l_n;
   // libxsmm_blasint l_ldb = l_k;
 
-  libxsmm_blasint l_m = 1;
-  libxsmm_blasint l_n = l_sizes.bk;
-  libxsmm_blasint l_k = l_sizes.bc;
+  libxsmm_blasint l_m = l_sizes.bk; // zeilen c
+  libxsmm_blasint l_n = l_sizes.q; // spalten von b/c
+  libxsmm_blasint l_k = l_sizes.bc; // spalten von a und zeilen von b
 
   libxsmm_blasint l_lda = l_m;
   libxsmm_blasint l_ldb = l_k;
@@ -64,7 +64,7 @@ at::Tensor mini_dnn::backend::Conv2dLibxsmm::forward( at::Tensor i_x,
   float * l_ptr_b = (float*) i_w.data_ptr();
   float * l_ptr_c = (float*) l_y.data_ptr();
 
-// #pragma omp parallel for collapse(2) firstprivate(l_param)   
+#pragma omp parallel for firstprivate(l_param)   
   for( int64_t l_n = 0; l_n < l_sizes.n; l_n++ ) {
 	for( int64_t l_kb = 0; l_kb < l_sizes.kb; l_kb++ ) {
 		for( int64_t l_p = 0; l_p < l_sizes.p; l_p++ ) {
