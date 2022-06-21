@@ -1,0 +1,562 @@
+submit host:
+login1
+submit dir:
+/lustre/home/wehrenberger/code/efficient_machine_learning/7th_chapter/mlp_fashion_mnist
+nodelist:
+fj[004-007]
+Loading pytorch/arm22/1.10
+  Loading requirement: arm-modules/22.0 binutils/11.2.0 acfl/22.0.1
+    /lustre/software/arm/compiler/22.0/moduledeps/acfl/22.0.1/armpl/22.0.1
+    ucx/1.11.2 openmpi/arm22.0/4.1.2
+[fj004:2447059] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj004:2447059] MCW rank 1 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj004:2447059] MCW rank 2 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj004:2447059] MCW rank 3 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+################################
+# Welcome to EML's MLP example #
+################################
+... Starting time measurement
+setting up datasets
+initializing data loaders, 
+setting up model, loss function and optimizer
+Rank #1: Starting training
+Rank #2: Starting training
+Model(
+  (m_flatten): Flatten(start_dim=1, end_dim=-1)
+  (m_layers): Sequential(
+    (0): Linear(in_features=784, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+training epoch #1
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 2.316 [    0|15000]
+Rank #0: Loss: 2.298 [ 1600|15000]
+Rank #0: Loss: 2.274 [ 3200|15000]
+Rank #0: Loss: 2.280 [ 4800|15000]
+Rank #0: Loss: 2.281 [ 6400|15000]
+Rank #0: Loss: 2.236 [ 8000|15000]
+Rank #0: Loss: 2.239 [ 9600|15000]
+Rank #0: Loss: 2.194 [11200|15000]
+Rank #0: Loss: 2.164 [12800|15000]
+Rank #0: Loss: 2.199 [14400|15000]
+  training loss: 2096.536
+  training loss reduce: 2090.348
+  test loss: 338.960
+  test accuracy: 0.457
+  test loss reduce: 337.166
+  test accuracy reduce: 0.430
+training epoch #2
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 2.207 [    0|15000]
+Rank #0: Loss: 2.187 [ 1600|15000]
+Rank #0: Loss: 2.119 [ 3200|15000]
+Rank #0: Loss: 2.174 [ 4800|15000]
+Rank #0: Loss: 2.157 [ 6400|15000]
+Rank #0: Loss: 2.028 [ 8000|15000]
+Rank #0: Loss: 2.052 [ 9600|15000]
+Rank #0: Loss: 1.892 [11200|15000]
+Rank #0: Loss: 1.945 [12800|15000]
+Rank #0: Loss: 1.959 [14400|15000]
+  training loss: 1914.869
+  training loss reduce: 1896.288
+  test loss: 297.079
+  test accuracy: 0.503
+  test loss reduce: 293.969
+  test accuracy reduce: 0.554
+training epoch #3
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.994 [    0|15000]
+Rank #0: Loss: 1.924 [ 1600|15000]
+Rank #0: Loss: 1.818 [ 3200|15000]
+Rank #0: Loss: 1.951 [ 4800|15000]
+Rank #0: Loss: 1.887 [ 6400|15000]
+Rank #0: Loss: 1.670 [ 8000|15000]
+Rank #0: Loss: 1.744 [ 9600|15000]
+Rank #0: Loss: 1.449 [11200|15000]
+Rank #0: Loss: 1.642 [12800|15000]
+Rank #0: Loss: 1.590 [14400|15000]
+  training loss: 1607.226
+  training loss reduce: 1578.667
+  test loss: 239.962
+  test accuracy: 0.583
+  test loss reduce: 236.999
+  test accuracy reduce: 0.602
+training epoch #4
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.685 [    0|15000]
+Rank #0: Loss: 1.572 [ 1600|15000]
+Rank #0: Loss: 1.463 [ 3200|15000]
+Rank #0: Loss: 1.657 [ 4800|15000]
+Rank #0: Loss: 1.564 [ 6400|15000]
+Rank #0: Loss: 1.373 [ 8000|15000]
+Rank #0: Loss: 1.438 [ 9600|15000]
+Rank #0: Loss: 1.169 [11200|15000]
+Rank #0: Loss: 1.398 [12800|15000]
+Rank #0: Loss: 1.298 [14400|15000]
+  training loss: 1306.382
+  training loss reduce: 1277.687
+  test loss: 197.717
+  test accuracy: 0.632
+  test loss reduce: 196.148
+  test accuracy reduce: 0.626
+training epoch #5
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.440 [    0|15000]
+Rank #0: Loss: 1.327 [ 1600|15000]
+Rank #0: Loss: 1.199 [ 3200|15000]
+Rank #0: Loss: 1.423 [ 4800|15000]
+Rank #0: Loss: 1.312 [ 6400|15000]
+Rank #0: Loss: 1.187 [ 8000|15000]
+Rank #0: Loss: 1.215 [ 9600|15000]
+Rank #0: Loss: 1.019 [11200|15000]
+Rank #0: Loss: 1.251 [12800|15000]
+Rank #0: Loss: 1.109 [14400|15000]
+  training loss: 1103.834
+  training loss reduce: 1081.846
+  test loss: 170.865
+  test accuracy: 0.650
+  test loss reduce: 170.731
+  test accuracy reduce: 0.642
+training epoch #6
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.287 [    0|15000]
+Rank #0: Loss: 1.169 [ 1600|15000]
+Rank #0: Loss: 1.017 [ 3200|15000]
+Rank #0: Loss: 1.269 [ 4800|15000]
+Rank #0: Loss: 1.149 [ 6400|15000]
+Rank #0: Loss: 1.062 [ 8000|15000]
+Rank #0: Loss: 1.060 [ 9600|15000]
+Rank #0: Loss: 0.930 [11200|15000]
+Rank #0: Loss: 1.160 [12800|15000]
+Rank #0: Loss: 0.980 [14400|15000]
+  training loss: 972.894
+  training loss reduce: 957.747
+  test loss: 153.464
+  test accuracy: 0.659
+  test loss reduce: 154.279
+  test accuracy reduce: 0.656
+training epoch #7
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.190 [    0|15000]
+Rank #0: Loss: 1.060 [ 1600|15000]
+Rank #0: Loss: 0.893 [ 3200|15000]
+Rank #0: Loss: 1.169 [ 4800|15000]
+Rank #0: Loss: 1.041 [ 6400|15000]
+Rank #0: Loss: 0.978 [ 8000|15000]
+Rank #0: Loss: 0.948 [ 9600|15000]
+Rank #0: Loss: 0.879 [11200|15000]
+Rank #0: Loss: 1.102 [12800|15000]
+Rank #0: Loss: 0.889 [14400|15000]
+  training loss: 885.704
+  training loss reduce: 875.001
+  test loss: 141.750
+  test accuracy: 0.669
+  test loss reduce: 143.038
+  test accuracy reduce: 0.668
+training epoch #8
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.121 [    0|15000]
+Rank #0: Loss: 0.976 [ 1600|15000]
+Rank #0: Loss: 0.806 [ 3200|15000]
+Rank #0: Loss: 1.103 [ 4800|15000]
+Rank #0: Loss: 0.963 [ 6400|15000]
+Rank #0: Loss: 0.924 [ 8000|15000]
+Rank #0: Loss: 0.864 [ 9600|15000]
+Rank #0: Loss: 0.850 [11200|15000]
+Rank #0: Loss: 1.062 [12800|15000]
+Rank #0: Loss: 0.821 [14400|15000]
+  training loss: 825.079
+  training loss reduce: 816.641
+  test loss: 133.433
+  test accuracy: 0.682
+  test loss reduce: 134.913
+  test accuracy reduce: 0.682
+training epoch #9
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.067 [    0|15000]
+Rank #0: Loss: 0.908 [ 1600|15000]
+Rank #0: Loss: 0.743 [ 3200|15000]
+Rank #0: Loss: 1.060 [ 4800|15000]
+Rank #0: Loss: 0.905 [ 6400|15000]
+Rank #0: Loss: 0.889 [ 8000|15000]
+Rank #0: Loss: 0.800 [ 9600|15000]
+Rank #0: Loss: 0.835 [11200|15000]
+Rank #0: Loss: 1.034 [12800|15000]
+Rank #0: Loss: 0.770 [14400|15000]
+  training loss: 780.705
+  training loss reduce: 773.303
+  test loss: 127.208
+  test accuracy: 0.693
+  test loss reduce: 128.756
+  test accuracy reduce: 0.695
+training epoch #10
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 1.021 [    0|15000]
+Rank #0: Loss: 0.849 [ 1600|15000]
+Rank #0: Loss: 0.694 [ 3200|15000]
+Rank #0: Loss: 1.030 [ 4800|15000]
+Rank #0: Loss: 0.859 [ 6400|15000]
+Rank #0: Loss: 0.866 [ 8000|15000]
+Rank #0: Loss: 0.749 [ 9600|15000]
+Rank #0: Loss: 0.829 [11200|15000]
+Rank #0: Loss: 1.012 [12800|15000]
+Rank #0: Loss: 0.730 [14400|15000]
+  training loss: 746.552
+  training loss reduce: 739.602
+  test loss: 122.317
+  test accuracy: 0.704
+  test loss reduce: 123.865
+  test accuracy reduce: 0.707
+training epoch #11
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.981 [    0|15000]
+Rank #0: Loss: 0.798 [ 1600|15000]
+Rank #0: Loss: 0.654 [ 3200|15000]
+Rank #0: Loss: 1.009 [ 4800|15000]
+Rank #0: Loss: 0.821 [ 6400|15000]
+Rank #0: Loss: 0.849 [ 8000|15000]
+Rank #0: Loss: 0.707 [ 9600|15000]
+Rank #0: Loss: 0.826 [11200|15000]
+Rank #0: Loss: 0.996 [12800|15000]
+Rank #0: Loss: 0.698 [14400|15000]
+  training loss: 718.971
+  training loss reduce: 712.203
+  test loss: 118.291
+  test accuracy: 0.719
+  test loss reduce: 119.809
+  test accuracy reduce: 0.720
+training epoch #12
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.945 [    0|15000]
+Rank #0: Loss: 0.753 [ 1600|15000]
+Rank #0: Loss: 0.621 [ 3200|15000]
+Rank #0: Loss: 0.992 [ 4800|15000]
+Rank #0: Loss: 0.788 [ 6400|15000]
+Rank #0: Loss: 0.835 [ 8000|15000]
+Rank #0: Loss: 0.670 [ 9600|15000]
+Rank #0: Loss: 0.827 [11200|15000]
+Rank #0: Loss: 0.983 [12800|15000]
+Rank #0: Loss: 0.671 [14400|15000]
+  training loss: 695.698
+  training loss reduce: 689.019
+  test loss: 114.842
+  test accuracy: 0.727
+  test loss reduce: 116.316
+  test accuracy reduce: 0.729
+training epoch #13
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.911 [    0|15000]
+Rank #0: Loss: 0.713 [ 1600|15000]
+Rank #0: Loss: 0.591 [ 3200|15000]
+Rank #0: Loss: 0.978 [ 4800|15000]
+Rank #0: Loss: 0.760 [ 6400|15000]
+Rank #0: Loss: 0.823 [ 8000|15000]
+Rank #0: Loss: 0.637 [ 9600|15000]
+Rank #0: Loss: 0.828 [11200|15000]
+Rank #0: Loss: 0.973 [12800|15000]
+Rank #0: Loss: 0.649 [14400|15000]
+  training loss: 675.335
+  training loss reduce: 668.736
+  test loss: 111.798
+  test accuracy: 0.736
+  test loss reduce: 113.227
+  test accuracy reduce: 0.738
+training epoch #14
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.880 [    0|15000]
+Rank #0: Loss: 0.679 [ 1600|15000]
+Rank #0: Loss: 0.565 [ 3200|15000]
+Rank #0: Loss: 0.966 [ 4800|15000]
+Rank #0: Loss: 0.735 [ 6400|15000]
+Rank #0: Loss: 0.812 [ 8000|15000]
+Rank #0: Loss: 0.607 [ 9600|15000]
+Rank #0: Loss: 0.830 [11200|15000]
+Rank #0: Loss: 0.965 [12800|15000]
+Rank #0: Loss: 0.630 [14400|15000]
+  training loss: 657.041
+  training loss reduce: 650.576
+  test loss: 109.054
+  test accuracy: 0.744
+  test loss reduce: 110.444
+  test accuracy reduce: 0.745
+training epoch #15
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.851 [    0|15000]
+Rank #0: Loss: 0.649 [ 1600|15000]
+Rank #0: Loss: 0.541 [ 3200|15000]
+Rank #0: Loss: 0.955 [ 4800|15000]
+Rank #0: Loss: 0.714 [ 6400|15000]
+Rank #0: Loss: 0.801 [ 8000|15000]
+Rank #0: Loss: 0.578 [ 9600|15000]
+Rank #0: Loss: 0.831 [11200|15000]
+Rank #0: Loss: 0.959 [12800|15000]
+Rank #0: Loss: 0.612 [14400|15000]
+  training loss: 640.305
+  training loss reduce: 634.053
+  test loss: 106.548
+  test accuracy: 0.751
+  test loss reduce: 107.907
+  test accuracy reduce: 0.753
+training epoch #16
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.824 [    0|15000]
+Rank #0: Loss: 0.624 [ 1600|15000]
+Rank #0: Loss: 0.518 [ 3200|15000]
+Rank #0: Loss: 0.944 [ 4800|15000]
+Rank #0: Loss: 0.694 [ 6400|15000]
+Rank #0: Loss: 0.790 [ 8000|15000]
+Rank #0: Loss: 0.552 [ 9600|15000]
+Rank #0: Loss: 0.832 [11200|15000]
+Rank #0: Loss: 0.956 [12800|15000]
+Rank #0: Loss: 0.597 [14400|15000]
+  training loss: 624.838
+  training loss reduce: 618.879
+  test loss: 104.246
+  test accuracy: 0.762
+  test loss reduce: 105.579
+  test accuracy reduce: 0.761
+training epoch #17
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.799 [    0|15000]
+Rank #0: Loss: 0.602 [ 1600|15000]
+Rank #0: Loss: 0.497 [ 3200|15000]
+Rank #0: Loss: 0.934 [ 4800|15000]
+Rank #0: Loss: 0.677 [ 6400|15000]
+Rank #0: Loss: 0.779 [ 8000|15000]
+Rank #0: Loss: 0.527 [ 9600|15000]
+Rank #0: Loss: 0.832 [11200|15000]
+Rank #0: Loss: 0.953 [12800|15000]
+Rank #0: Loss: 0.582 [14400|15000]
+  training loss: 610.456
+  training loss reduce: 604.873
+  test loss: 102.124
+  test accuracy: 0.767
+  test loss reduce: 103.441
+  test accuracy reduce: 0.767
+training epoch #18
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.776 [    0|15000]
+Rank #0: Loss: 0.582 [ 1600|15000]
+Rank #0: Loss: 0.477 [ 3200|15000]
+Rank #0: Loss: 0.924 [ 4800|15000]
+Rank #0: Loss: 0.662 [ 6400|15000]
+Rank #0: Loss: 0.769 [ 8000|15000]
+Rank #0: Loss: 0.504 [ 9600|15000]
+Rank #0: Loss: 0.833 [11200|15000]
+Rank #0: Loss: 0.953 [12800|15000]
+Rank #0: Loss: 0.569 [14400|15000]
+  training loss: 597.035
+  training loss reduce: 591.907
+  test loss: 100.164
+  test accuracy: 0.773
+  test loss reduce: 101.472
+  test accuracy reduce: 0.772
+training epoch #19
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.755 [    0|15000]
+Rank #0: Loss: 0.565 [ 1600|15000]
+Rank #0: Loss: 0.457 [ 3200|15000]
+Rank #0: Loss: 0.914 [ 4800|15000]
+Rank #0: Loss: 0.649 [ 6400|15000]
+Rank #0: Loss: 0.759 [ 8000|15000]
+Rank #0: Loss: 0.483 [ 9600|15000]
+Rank #0: Loss: 0.833 [11200|15000]
+Rank #0: Loss: 0.955 [12800|15000]
+Rank #0: Loss: 0.557 [14400|15000]
+  training loss: 584.499
+  training loss reduce: 579.889
+  test loss: 98.363
+  test accuracy: 0.777
+  test loss reduce: 99.658
+  test accuracy reduce: 0.777
+training epoch #20
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.735 [    0|15000]
+Rank #0: Loss: 0.550 [ 1600|15000]
+Rank #0: Loss: 0.439 [ 3200|15000]
+Rank #0: Loss: 0.904 [ 4800|15000]
+Rank #0: Loss: 0.637 [ 6400|15000]
+Rank #0: Loss: 0.750 [ 8000|15000]
+Rank #0: Loss: 0.463 [ 9600|15000]
+Rank #0: Loss: 0.833 [11200|15000]
+Rank #0: Loss: 0.957 [12800|15000]
+Rank #0: Loss: 0.546 [14400|15000]
+  training loss: 572.829
+  training loss reduce: 568.755
+  test loss: 96.715
+  test accuracy: 0.782
+  test loss reduce: 97.992
+  test accuracy reduce: 0.781
+training epoch #21
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.717 [    0|15000]
+Rank #0: Loss: 0.537 [ 1600|15000]
+Rank #0: Loss: 0.422 [ 3200|15000]
+Rank #0: Loss: 0.895 [ 4800|15000]
+Rank #0: Loss: 0.627 [ 6400|15000]
+Rank #0: Loss: 0.741 [ 8000|15000]
+Rank #0: Loss: 0.445 [ 9600|15000]
+Rank #0: Loss: 0.832 [11200|15000]
+Rank #0: Loss: 0.960 [12800|15000]
+Rank #0: Loss: 0.535 [14400|15000]
+  training loss: 561.976
+  training loss reduce: 558.436
+  test loss: 95.206
+  test accuracy: 0.786
+  test loss reduce: 96.459
+  test accuracy reduce: 0.786
+training epoch #22
+Rank #1: Starting training
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.700 [    0|15000]
+Rank #0: Loss: 0.526 [ 1600|15000]
+Rank #0: Loss: 0.406 [ 3200|15000]
+Rank #0: Loss: 0.886 [ 4800|15000]
+Rank #0: Loss: 0.617 [ 6400|15000]
+Rank #0: Loss: 0.732 [ 8000|15000]
+Rank #0: Loss: 0.429 [ 9600|15000]
+Rank #0: Loss: 0.831 [11200|15000]
+Rank #0: Loss: 0.964 [12800|15000]
+Rank #0: Loss: 0.525 [14400|15000]
+  training loss: 551.876
+  training loss reduce: 548.863
+  test loss: 93.824
+  test accuracy: 0.790
+  test loss reduce: 95.048
+  test accuracy reduce: 0.789
+training epoch #23
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.684 [    0|15000]
+Rank #0: Loss: 0.516 [ 1600|15000]
+Rank #0: Loss: 0.390 [ 3200|15000]
+Rank #0: Loss: 0.878 [ 4800|15000]
+Rank #0: Loss: 0.608 [ 6400|15000]
+Rank #0: Loss: 0.724 [ 8000|15000]
+Rank #0: Loss: 0.415 [ 9600|15000]
+Rank #0: Loss: 0.830 [11200|15000]
+Rank #0: Loss: 0.969 [12800|15000]
+Rank #0: Loss: 0.515 [14400|15000]
+  training loss: 542.468
+  training loss reduce: 539.970
+  test loss: 92.559
+  test accuracy: 0.793
+  test loss reduce: 93.747
+  test accuracy reduce: 0.791
+training epoch #24
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.669 [    0|15000]
+Rank #0: Loss: 0.507 [ 1600|15000]
+Rank #0: Loss: 0.375 [ 3200|15000]
+Rank #0: Loss: 0.870 [ 4800|15000]
+Rank #0: Loss: 0.600 [ 6400|15000]
+Rank #0: Loss: 0.716 [ 8000|15000]
+Rank #0: Loss: 0.401 [ 9600|15000]
+Rank #0: Loss: 0.829 [11200|15000]
+Rank #0: Loss: 0.974 [12800|15000]
+Rank #0: Loss: 0.506 [14400|15000]
+  training loss: 533.700
+  training loss reduce: 531.690
+  test loss: 91.400
+  test accuracy: 0.795
+  test loss reduce: 92.548
+  test accuracy reduce: 0.794
+training epoch #25
+Rank #3: Starting training
+Rank #2: Starting training
+Rank #1: Starting training
+Rank #0: Starting training
+Rank #0: Loss: 0.655 [    0|15000]
+Rank #0: Loss: 0.498 [ 1600|15000]
+Rank #0: Loss: 0.362 [ 3200|15000]
+Rank #0: Loss: 0.862 [ 4800|15000]
+Rank #0: Loss: 0.592 [ 6400|15000]
+Rank #0: Loss: 0.709 [ 8000|15000]
+Rank #0: Loss: 0.389 [ 9600|15000]
+Rank #0: Loss: 0.828 [11200|15000]
+Rank #0: Loss: 0.980 [12800|15000]
+Rank #0: Loss: 0.498 [14400|15000]
+  training loss: 525.509
+  training loss reduce: 523.967
+  test loss: 90.335
+  test accuracy: 0.798
+  test loss reduce: 91.439
+  test accuracy reduce: 0.797
+
+... Run took 338 seconds.
+
+#############
+# Finished! #
+#############
