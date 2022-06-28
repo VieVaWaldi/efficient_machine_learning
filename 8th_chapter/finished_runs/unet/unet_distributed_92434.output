@@ -1,0 +1,264 @@
+submit host:
+login1
+submit dir:
+/lustre/home/cgerlach/unet_seismic_new
+nodelist:
+fj[156-163]
+Loading pytorch/arm22/1.10
+  Loading requirement: arm-modules/22.0 binutils/11.2.0 acfl/22.0.1
+    /lustre/software/arm/compiler/22.0/moduledeps/acfl/22.0.1/armpl/22.0.1
+    ucx/1.11.2 openmpi/arm22.0/4.1.2
+[fj156:1558431] MCW rank 2 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj156:1558431] MCW rank 3 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj156:1558431] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj156:1558431] MCW rank 1 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj157:1618423] MCW rank 4 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj157:1618423] MCW rank 5 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj157:1618423] MCW rank 6 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj157:1618423] MCW rank 7 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+##############################################
+# Welcome to EML's U-Net for seismic example #
+##############################################
+could not find a CUDA device
+printing configuration:
+{
+  "unet": {
+    "n_init_channels": 32,
+    "kernel_size": 3,
+    "n_layers_per_block": 2,
+    "n_levels": 2
+  },
+  "train": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          0,
+          750
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "n_epochs": 20,
+    "n_epochs_print": 5,
+    "n_batch_abort": 5000,
+    "batch_size": 16
+  },
+  "test": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          751,
+          782
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "batch_size": 8
+  }
+}
+********************
+* assembling U-Net *
+********************
+encoder:
+Sequential(
+  (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+max_pooling:
+MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+crop:
+ZeroPad2d(padding=(-4, -4, -4, -4), value=0.0)
+bottleneck:
+Sequential(
+  (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+up_sampling:
+Upsample(scale_factor=2.0, mode=bilinear)
+decoder:
+Sequential(
+  (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+classification:
+Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+*****************
+* prepping data *
+*****************
+loading training dataset
+shape padded:(1004, 750, 588)
+shape:(1, 750, 1)
+loading test data set
+shape padded:(1004, 31, 588)
+shape:(1, 31, 1)
+deriving mean and standard deviation of training data
+  mean: 0.6930369
+  std: 388.38947
+normalizing training and test data
+initializing data loaders
+************
+* training *
+************
+training epoch1
+  processed 47 batches
+  training loss:tensor(2.0335)
+applying net to test data
+  test loss:tensor(2.0633)
+  test accuracy:tensor(4.6776)
+training epoch2
+  processed 47 batches
+  training loss:tensor(1.9310)
+applying net to test data
+  test loss:tensor(1.9637)
+  test accuracy:tensor(7.0216)
+training epoch3
+  processed 47 batches
+  training loss:tensor(1.8485)
+applying net to test data
+  test loss:tensor(1.8828)
+  test accuracy:tensor(9.2258)
+training epoch4
+  processed 47 batches
+  training loss:tensor(1.7773)
+applying net to test data
+  test loss:tensor(1.8122)
+  test accuracy:tensor(11.2198)
+training epoch5
+  processed 47 batches
+  training loss:tensor(1.7145)
+applying net to test data
+  test loss:tensor(1.7503)
+  test accuracy:tensor(12.8139)
+training epoch6
+  processed 47 batches
+  training loss:tensor(1.6575)
+applying net to test data
+  test loss:tensor(1.6948)
+  test accuracy:tensor(14.0659)
+training epoch7
+  processed 47 batches
+  training loss:tensor(1.6055)
+applying net to test data
+  test loss:tensor(1.6447)
+  test accuracy:tensor(15.0193)
+training epoch8
+  processed 47 batches
+  training loss:tensor(1.5582)
+applying net to test data
+  test loss:tensor(1.5992)
+  test accuracy:tensor(15.6961)
+training epoch9
+  processed 47 batches
+  training loss:tensor(1.5153)
+applying net to test data
+  test loss:tensor(1.5583)
+  test accuracy:tensor(16.1421)
+training epoch10
+  processed 47 batches
+  training loss:tensor(1.4763)
+applying net to test data
+  test loss:tensor(1.5217)
+  test accuracy:tensor(16.4544)
+training epoch11
+  processed 47 batches
+  training loss:tensor(1.4410)
+applying net to test data
+  test loss:tensor(1.4886)
+  test accuracy:tensor(16.6977)
+training epoch12
+  processed 47 batches
+  training loss:tensor(1.4089)
+applying net to test data
+  test loss:tensor(1.4587)
+  test accuracy:tensor(16.8884)
+training epoch13
+  processed 47 batches
+  training loss:tensor(1.3795)
+applying net to test data
+  test loss:tensor(1.4313)
+  test accuracy:tensor(17.0447)
+training epoch14
+  processed 47 batches
+  training loss:tensor(1.3526)
+applying net to test data
+  test loss:tensor(1.4064)
+  test accuracy:tensor(17.1740)
+training epoch15
+  processed 47 batches
+  training loss:tensor(1.3279)
+applying net to test data
+  test loss:tensor(1.3835)
+  test accuracy:tensor(17.2870)
+training epoch16
+  processed 47 batches
+  training loss:tensor(1.3051)
+applying net to test data
+  test loss:tensor(1.3626)
+  test accuracy:tensor(17.3777)
+training epoch17
+  processed 47 batches
+  training loss:tensor(1.2840)
+applying net to test data
+  test loss:tensor(1.3433)
+  test accuracy:tensor(17.4534)
+training epoch18
+  processed 47 batches
+  training loss:tensor(1.2645)
+applying net to test data
+  test loss:tensor(1.3255)
+  test accuracy:tensor(17.5213)
+training epoch19
+  processed 47 batches
+  training loss:tensor(1.2463)
+applying net to test data
+  test loss:tensor(1.3090)
+  test accuracy:tensor(17.5796)
+training epoch20
+  processed 47 batches
+  training loss:tensor(1.2295)
+applying net to test data
+  test loss:tensor(1.2937)
+  test accuracy:tensor(17.6350)
+
+... Run took 1788 seconds.
+

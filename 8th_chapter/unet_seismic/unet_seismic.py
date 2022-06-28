@@ -93,7 +93,7 @@ l_unet2d.train()
 l_loss_func = torch.nn.CrossEntropyLoss()
 # l_optimizer = torch.optim.Adam( l_unet2d.parameters(), lr=1E-4 )
 # l_optimizer = torch.optim.Adadelta( l_unet2d.parameters(), lr=1E-4 )
-l_optimizer = torch.optim.AdamW( l_unet2d.parameters(), lr=0.001 )
+# l_optimizer = torch.optim.AdamW( l_unet2d.parameters(), lr=0.001 )
 
 print( '*****************')
 print( '* prepping data *')
@@ -143,15 +143,17 @@ final_test_accuracy = -1
 # train for the given number of epochs
 for l_epoch in range( l_config['train']['n_epochs'] ):
   print( 'training epoch', l_epoch+1 )
+  
+  new_lr = lr / (l_epoch+1)
+  print( '  new learning rate:', new_lr )
+
+  l_optimizer = torch.optim.Adam( l_unet2d.parameters(), lr=new_lr )
   l_loss_train = eml.unet.trainer.train( l_loss_func,
                                          l_data_loader_train,
                                          l_unet2d,
                                          l_optimizer,
                                          i_n_batches_abort = l_config['train']['n_batch_abort'] )
   print( '  training loss:', l_loss_train )
-  new_lr = lr / (l_epoch+1)
-  # torch.optim.param_groups[0]['lr'] = new_lr
-  print( '  new learning rate:', new_lr )
 
   print( 'applying net to test data' )
   l_loss_test, l_n_correct_test, l_n_total_test = eml.unet.tester.test( l_loss_func,

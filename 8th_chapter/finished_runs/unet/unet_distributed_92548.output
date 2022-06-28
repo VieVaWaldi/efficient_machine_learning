@@ -1,0 +1,816 @@
+submit host:
+login1
+submit dir:
+/lustre/home/cgerlach/unet_seismic_new
+nodelist:
+fj[090-150,152-170]
+Loading pytorch/arm22/1.10
+  Loading requirement: arm-modules/22.0 binutils/11.2.0 acfl/22.0.1
+    /lustre/software/arm/compiler/22.0/moduledeps/acfl/22.0.1/armpl/22.0.1
+    ucx/1.11.2 openmpi/arm22.0/4.1.2
+[fj090:2259735] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj090:2259735] MCW rank 1 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj090:2259735] MCW rank 2 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj090:2259735] MCW rank 3 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj106:1908331] MCW rank 67 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj106:1908331] MCW rank 64 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj096:2077236] MCW rank 26 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj106:1908331] MCW rank 65 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj096:2077236] MCW rank 27 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj106:1908331] MCW rank 66 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj109:1896401] MCW rank 78 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj096:2077236] MCW rank 24 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj100:1846432] MCW rank 43 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj109:1896401] MCW rank 79 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj101:1921901] MCW rank 44 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj096:2077236] MCW rank 25 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj100:1846432] MCW rank 40 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj098:1978840] MCW rank 32 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj105:1911688] MCW rank 60 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj109:1896401] MCW rank 76 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj100:1846432] MCW rank 41 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj098:1978840] MCW rank 33 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj105:1911688] MCW rank 61 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj109:1896401] MCW rank 77 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj107:1927420] MCW rank 70 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj101:1921901] MCW rank 45 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj101:1921901] MCW rank 46 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj100:1846432] MCW rank 42 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj098:1978840] MCW rank 34 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj105:1911688] MCW rank 62 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj104:1905179] MCW rank 56 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj107:1927420] MCW rank 71 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj098:1978840] MCW rank 35 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj105:1911688] MCW rank 63 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj104:1905179] MCW rank 57 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj107:1927420] MCW rank 68 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj091:2194670] MCW rank 4 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj093:2178257] MCW rank 12 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj095:2089168] MCW rank 22 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj101:1921901] MCW rank 47 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj108:1905799] MCW rank 74 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj104:1905179] MCW rank 58 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj107:1927420] MCW rank 69 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj091:2194670] MCW rank 5 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj093:2178257] MCW rank 13 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj095:2089168] MCW rank 23 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj104:1905179] MCW rank 59 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj091:2194670] MCW rank 6 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj093:2178257] MCW rank 14 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj095:2089168] MCW rank 20 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj108:1905799] MCW rank 75 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj093:2178257] MCW rank 15 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj095:2089168] MCW rank 21 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj108:1905799] MCW rank 72 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj099:1996431] MCW rank 39 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj097:1981459] MCW rank 30 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj091:2194670] MCW rank 7 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj102:1925896] MCW rank 49 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj108:1905799] MCW rank 73 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj099:1996431] MCW rank 36 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj097:1981459] MCW rank 31 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj103:1920465] MCW rank 53 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj097:1981459] MCW rank 28 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj103:1920465] MCW rank 54 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj094:2146897] MCW rank 17 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj092:2151374] MCW rank 8 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj102:1925896] MCW rank 50 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj099:1996431] MCW rank 37 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj099:1996431] MCW rank 38 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj097:1981459] MCW rank 29 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj103:1920465] MCW rank 55 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj094:2146897] MCW rank 18 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj092:2151374] MCW rank 9 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj102:1925896] MCW rank 51 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj103:1920465] MCW rank 52 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj094:2146897] MCW rank 19 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj092:2151374] MCW rank 10 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj102:1925896] MCW rank 48 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj094:2146897] MCW rank 16 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj092:2151374] MCW rank 11 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+##############################################
+# Welcome to EML's U-Net for seismic example #
+##############################################
+could not find a CUDA device
+printing configuration:
+{
+  "unet": {
+    "n_init_channels": 32,
+    "kernel_size": 3,
+    "n_layers_per_block": 2,
+    "n_levels": 2
+  },
+  "train": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          0,
+          750
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "n_epochs": 100,
+    "n_epochs_print": 5,
+    "n_batch_abort": 5000,
+    "batch_size": 160
+  },
+  "test": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          751,
+          782
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "batch_size": 80
+  }
+}
+********************
+* assembling U-Net *
+********************
+encoder:
+Sequential(
+  (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+max_pooling:
+MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+crop:
+ZeroPad2d(padding=(-4, -4, -4, -4), value=0.0)
+bottleneck:
+Sequential(
+  (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+up_sampling:
+Upsample(scale_factor=2.0, mode=bilinear)
+decoder:
+Sequential(
+  (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+classification:
+Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+*****************
+* prepping data *
+*****************
+loading training dataset
+shape padded:(1004, 750, 588)
+shape:(1, 750, 1)
+loading test data set
+shape padded:(1004, 31, 588)
+shape:(1, 31, 1)
+deriving mean and standard deviation of training data
+  mean: 0.6930369
+  std: 388.38947
+normalizing training and test data
+initializing data loaders
+************
+* training *
+************
+training epoch1
+  processed 5 batches
+  training loss:tensor(2.1221)
+applying net to test data
+  test loss:tensor(2.1293)
+  test accuracy:tensor(0.0017)
+training epoch2
+  processed 5 batches
+  training loss:tensor(2.0988)
+applying net to test data
+  test loss:tensor(2.1166)
+  test accuracy:tensor(0.0017)
+training epoch3
+  processed 5 batches
+  training loss:tensor(2.0789)
+applying net to test data
+  test loss:tensor(2.1005)
+  test accuracy:tensor(0.0019)
+training epoch4
+  processed 5 batches
+  training loss:tensor(2.0614)
+applying net to test data
+  test loss:tensor(2.0828)
+  test accuracy:tensor(0.0020)
+training epoch5
+  processed 5 batches
+  training loss:tensor(2.0455)
+applying net to test data
+  test loss:tensor(2.0657)
+  test accuracy:tensor(0.0020)
+training epoch6
+  processed 5 batches
+  training loss:tensor(2.0308)
+applying net to test data
+  test loss:tensor(2.0499)
+  test accuracy:tensor(0.0021)
+training epoch7
+  processed 5 batches
+  training loss:tensor(2.0168)
+applying net to test data
+  test loss:tensor(2.0356)
+  test accuracy:tensor(0.0022)
+training epoch8
+  processed 5 batches
+  training loss:tensor(2.0035)
+applying net to test data
+  test loss:tensor(2.0222)
+  test accuracy:tensor(0.0022)
+training epoch9
+  processed 5 batches
+  training loss:tensor(1.9908)
+applying net to test data
+  test loss:tensor(2.0097)
+  test accuracy:tensor(0.0023)
+training epoch10
+  processed 5 batches
+  training loss:tensor(1.9786)
+applying net to test data
+  test loss:tensor(1.9978)
+  test accuracy:tensor(0.0024)
+training epoch11
+  processed 5 batches
+  training loss:tensor(1.9667)
+applying net to test data
+  test loss:tensor(1.9862)
+  test accuracy:tensor(0.0025)
+training epoch12
+  processed 5 batches
+  training loss:tensor(1.9551)
+applying net to test data
+  test loss:tensor(1.9749)
+  test accuracy:tensor(0.0026)
+training epoch13
+  processed 5 batches
+  training loss:tensor(1.9438)
+applying net to test data
+  test loss:tensor(1.9638)
+  test accuracy:tensor(0.0028)
+training epoch14
+  processed 5 batches
+  training loss:tensor(1.9327)
+applying net to test data
+  test loss:tensor(1.9529)
+  test accuracy:tensor(0.0029)
+training epoch15
+  processed 5 batches
+  training loss:tensor(1.9219)
+applying net to test data
+  test loss:tensor(1.9422)
+  test accuracy:tensor(0.0030)
+training epoch16
+  processed 5 batches
+  training loss:tensor(1.9114)
+applying net to test data
+  test loss:tensor(1.9317)
+  test accuracy:tensor(0.0031)
+training epoch17
+  processed 5 batches
+  training loss:tensor(1.9010)
+applying net to test data
+  test loss:tensor(1.9214)
+  test accuracy:tensor(0.0031)
+training epoch18
+  processed 5 batches
+  training loss:tensor(1.8909)
+applying net to test data
+  test loss:tensor(1.9113)
+  test accuracy:tensor(0.0032)
+training epoch19
+  processed 5 batches
+  training loss:tensor(1.8809)
+applying net to test data
+  test loss:tensor(1.9014)
+  test accuracy:tensor(0.0033)
+training epoch20
+  processed 5 batches
+  training loss:tensor(1.8711)
+applying net to test data
+  test loss:tensor(1.8917)
+  test accuracy:tensor(0.0034)
+training epoch21
+  processed 5 batches
+  training loss:tensor(1.8615)
+applying net to test data
+  test loss:tensor(1.8821)
+  test accuracy:tensor(0.0035)
+training epoch22
+  processed 5 batches
+  training loss:tensor(1.8521)
+applying net to test data
+  test loss:tensor(1.8727)
+  test accuracy:tensor(0.0036)
+training epoch23
+  processed 5 batches
+  training loss:tensor(1.8429)
+applying net to test data
+  test loss:tensor(1.8635)
+  test accuracy:tensor(0.0037)
+training epoch24
+  processed 5 batches
+  training loss:tensor(1.8338)
+applying net to test data
+  test loss:tensor(1.8545)
+  test accuracy:tensor(0.0037)
+training epoch25
+  processed 5 batches
+  training loss:tensor(1.8248)
+applying net to test data
+  test loss:tensor(1.8456)
+  test accuracy:tensor(0.0038)
+training epoch26
+  processed 5 batches
+  training loss:tensor(1.8160)
+applying net to test data
+  test loss:tensor(1.8370)
+  test accuracy:tensor(0.0039)
+training epoch27
+  processed 5 batches
+  training loss:tensor(1.8073)
+applying net to test data
+  test loss:tensor(1.8285)
+  test accuracy:tensor(0.0040)
+training epoch28
+  processed 5 batches
+  training loss:tensor(1.7988)
+applying net to test data
+  test loss:tensor(1.8201)
+  test accuracy:tensor(0.0040)
+training epoch29
+  processed 5 batches
+  training loss:tensor(1.7905)
+applying net to test data
+  test loss:tensor(1.8119)
+  test accuracy:tensor(0.0041)
+training epoch30
+  processed 5 batches
+  training loss:tensor(1.7823)
+applying net to test data
+  test loss:tensor(1.8038)
+  test accuracy:tensor(0.0042)
+training epoch31
+  processed 5 batches
+  training loss:tensor(1.7742)
+applying net to test data
+  test loss:tensor(1.7959)
+  test accuracy:tensor(0.0042)
+training epoch32
+  processed 5 batches
+  training loss:tensor(1.7662)
+applying net to test data
+  test loss:tensor(1.7881)
+  test accuracy:tensor(0.0043)
+training epoch33
+  processed 5 batches
+  training loss:tensor(1.7583)
+applying net to test data
+  test loss:tensor(1.7805)
+  test accuracy:tensor(0.0044)
+training epoch34
+  processed 5 batches
+  training loss:tensor(1.7506)
+applying net to test data
+  test loss:tensor(1.7730)
+  test accuracy:tensor(0.0044)
+training epoch35
+  processed 5 batches
+  training loss:tensor(1.7430)
+applying net to test data
+  test loss:tensor(1.7656)
+  test accuracy:tensor(0.0045)
+training epoch36
+  processed 5 batches
+  training loss:tensor(1.7355)
+applying net to test data
+  test loss:tensor(1.7584)
+  test accuracy:tensor(0.0045)
+training epoch37
+  processed 5 batches
+  training loss:tensor(1.7282)
+applying net to test data
+  test loss:tensor(1.7513)
+  test accuracy:tensor(0.0046)
+training epoch38
+  processed 5 batches
+  training loss:tensor(1.7209)
+applying net to test data
+  test loss:tensor(1.7444)
+  test accuracy:tensor(0.0046)
+training epoch39
+  processed 5 batches
+  training loss:tensor(1.7137)
+applying net to test data
+  test loss:tensor(1.7375)
+  test accuracy:tensor(0.0047)
+training epoch40
+  processed 5 batches
+  training loss:tensor(1.7067)
+applying net to test data
+  test loss:tensor(1.7308)
+  test accuracy:tensor(0.0047)
+training epoch41
+  processed 5 batches
+  training loss:tensor(1.6997)
+applying net to test data
+  test loss:tensor(1.7241)
+  test accuracy:tensor(0.0048)
+training epoch42
+  processed 5 batches
+  training loss:tensor(1.6928)
+applying net to test data
+  test loss:tensor(1.7176)
+  test accuracy:tensor(0.0048)
+training epoch43
+  processed 5 batches
+  training loss:tensor(1.6860)
+applying net to test data
+  test loss:tensor(1.7112)
+  test accuracy:tensor(0.0049)
+training epoch44
+  processed 5 batches
+  training loss:tensor(1.6793)
+applying net to test data
+  test loss:tensor(1.7049)
+  test accuracy:tensor(0.0049)
+training epoch45
+  processed 5 batches
+  training loss:tensor(1.6727)
+applying net to test data
+  test loss:tensor(1.6987)
+  test accuracy:tensor(0.0049)
+training epoch46
+  processed 5 batches
+  training loss:tensor(1.6662)
+applying net to test data
+  test loss:tensor(1.6925)
+  test accuracy:tensor(0.0050)
+training epoch47
+  processed 5 batches
+  training loss:tensor(1.6598)
+applying net to test data
+  test loss:tensor(1.6865)
+  test accuracy:tensor(0.0050)
+training epoch48
+  processed 5 batches
+  training loss:tensor(1.6534)
+applying net to test data
+  test loss:tensor(1.6806)
+  test accuracy:tensor(0.0050)
+training epoch49
+  processed 5 batches
+  training loss:tensor(1.6471)
+applying net to test data
+  test loss:tensor(1.6747)
+  test accuracy:tensor(0.0051)
+training epoch50
+  processed 5 batches
+  training loss:tensor(1.6409)
+applying net to test data
+  test loss:tensor(1.6689)
+  test accuracy:tensor(0.0051)
+training epoch51
+  processed 5 batches
+  training loss:tensor(1.6348)
+applying net to test data
+  test loss:tensor(1.6633)
+  test accuracy:tensor(0.0051)
+training epoch52
+  processed 5 batches
+  training loss:tensor(1.6288)
+applying net to test data
+  test loss:tensor(1.6577)
+  test accuracy:tensor(0.0052)
+training epoch53
+  processed 5 batches
+  training loss:tensor(1.6229)
+applying net to test data
+  test loss:tensor(1.6521)
+  test accuracy:tensor(0.0052)
+training epoch54
+  processed 5 batches
+  training loss:tensor(1.6170)
+applying net to test data
+  test loss:tensor(1.6467)
+  test accuracy:tensor(0.0052)
+training epoch55
+  processed 5 batches
+  training loss:tensor(1.6112)
+applying net to test data
+  test loss:tensor(1.6413)
+  test accuracy:tensor(0.0053)
+training epoch56
+  processed 5 batches
+  training loss:tensor(1.6054)
+applying net to test data
+  test loss:tensor(1.6360)
+  test accuracy:tensor(0.0053)
+training epoch57
+  processed 5 batches
+  training loss:tensor(1.5998)
+applying net to test data
+  test loss:tensor(1.6308)
+  test accuracy:tensor(0.0053)
+training epoch58
+  processed 5 batches
+  training loss:tensor(1.5942)
+applying net to test data
+  test loss:tensor(1.6257)
+  test accuracy:tensor(0.0053)
+training epoch59
+  processed 5 batches
+  training loss:tensor(1.5887)
+applying net to test data
+  test loss:tensor(1.6206)
+  test accuracy:tensor(0.0054)
+training epoch60
+  processed 5 batches
+  training loss:tensor(1.5832)
+applying net to test data
+  test loss:tensor(1.6156)
+  test accuracy:tensor(0.0054)
+training epoch61
+  processed 5 batches
+  training loss:tensor(1.5778)
+applying net to test data
+  test loss:tensor(1.6106)
+  test accuracy:tensor(0.0054)
+training epoch62
+  processed 5 batches
+  training loss:tensor(1.5725)
+applying net to test data
+  test loss:tensor(1.6057)
+  test accuracy:tensor(0.0054)
+training epoch63
+  processed 5 batches
+  training loss:tensor(1.5672)
+applying net to test data
+  test loss:tensor(1.6009)
+  test accuracy:tensor(0.0055)
+training epoch64
+  processed 5 batches
+  training loss:tensor(1.5620)
+applying net to test data
+  test loss:tensor(1.5962)
+  test accuracy:tensor(0.0055)
+training epoch65
+  processed 5 batches
+  training loss:tensor(1.5568)
+applying net to test data
+  test loss:tensor(1.5915)
+  test accuracy:tensor(0.0055)
+training epoch66
+  processed 5 batches
+  training loss:tensor(1.5518)
+applying net to test data
+  test loss:tensor(1.5868)
+  test accuracy:tensor(0.0055)
+training epoch67
+  processed 5 batches
+  training loss:tensor(1.5467)
+applying net to test data
+  test loss:tensor(1.5822)
+  test accuracy:tensor(0.0055)
+training epoch68
+  processed 5 batches
+  training loss:tensor(1.5418)
+applying net to test data
+  test loss:tensor(1.5777)
+  test accuracy:tensor(0.0055)
+training epoch69
+  processed 5 batches
+  training loss:tensor(1.5368)
+applying net to test data
+  test loss:tensor(1.5732)
+  test accuracy:tensor(0.0056)
+training epoch70
+  processed 5 batches
+  training loss:tensor(1.5320)
+applying net to test data
+  test loss:tensor(1.5688)
+  test accuracy:tensor(0.0056)
+training epoch71
+  processed 5 batches
+  training loss:tensor(1.5272)
+applying net to test data
+  test loss:tensor(1.5644)
+  test accuracy:tensor(0.0056)
+training epoch72
+  processed 5 batches
+  training loss:tensor(1.5224)
+applying net to test data
+  test loss:tensor(1.5601)
+  test accuracy:tensor(0.0056)
+training epoch73
+  processed 5 batches
+  training loss:tensor(1.5177)
+applying net to test data
+  test loss:tensor(1.5558)
+  test accuracy:tensor(0.0056)
+training epoch74
+  processed 5 batches
+  training loss:tensor(1.5131)
+applying net to test data
+  test loss:tensor(1.5516)
+  test accuracy:tensor(0.0057)
+training epoch75
+  processed 5 batches
+  training loss:tensor(1.5085)
+applying net to test data
+  test loss:tensor(1.5474)
+  test accuracy:tensor(0.0057)
+training epoch76
+  processed 5 batches
+  training loss:tensor(1.5039)
+applying net to test data
+  test loss:tensor(1.5433)
+  test accuracy:tensor(0.0057)
+training epoch77
+  processed 5 batches
+  training loss:tensor(1.4994)
+applying net to test data
+  test loss:tensor(1.5392)
+  test accuracy:tensor(0.0057)
+training epoch78
+  processed 5 batches
+  training loss:tensor(1.4949)
+applying net to test data
+  test loss:tensor(1.5352)
+  test accuracy:tensor(0.0057)
+training epoch79
+  processed 5 batches
+  training loss:tensor(1.4905)
+applying net to test data
+  test loss:tensor(1.5312)
+  test accuracy:tensor(0.0057)
+training epoch80
+  processed 5 batches
+  training loss:tensor(1.4862)
+applying net to test data
+  test loss:tensor(1.5273)
+  test accuracy:tensor(0.0058)
+training epoch81
+  processed 5 batches
+  training loss:tensor(1.4818)
+applying net to test data
+  test loss:tensor(1.5234)
+  test accuracy:tensor(0.0058)
+training epoch82
+  processed 5 batches
+  training loss:tensor(1.4776)
+applying net to test data
+  test loss:tensor(1.5196)
+  test accuracy:tensor(0.0058)
+training epoch83
+  processed 5 batches
+  training loss:tensor(1.4733)
+applying net to test data
+  test loss:tensor(1.5158)
+  test accuracy:tensor(0.0058)
+training epoch84
+  processed 5 batches
+  training loss:tensor(1.4691)
+applying net to test data
+  test loss:tensor(1.5120)
+  test accuracy:tensor(0.0058)
+training epoch85
+  processed 5 batches
+  training loss:tensor(1.4650)
+applying net to test data
+  test loss:tensor(1.5083)
+  test accuracy:tensor(0.0058)
+training epoch86
+  processed 5 batches
+  training loss:tensor(1.4609)
+applying net to test data
+  test loss:tensor(1.5046)
+  test accuracy:tensor(0.0058)
+training epoch87
+  processed 5 batches
+  training loss:tensor(1.4568)
+applying net to test data
+  test loss:tensor(1.5010)
+  test accuracy:tensor(0.0059)
+training epoch88
+  processed 5 batches
+  training loss:tensor(1.4528)
+applying net to test data
+  test loss:tensor(1.4974)
+  test accuracy:tensor(0.0059)
+training epoch89
+  processed 5 batches
+  training loss:tensor(1.4488)
+applying net to test data
+  test loss:tensor(1.4938)
+  test accuracy:tensor(0.0059)
+training epoch90
+  processed 5 batches
+  training loss:tensor(1.4449)
+applying net to test data
+  test loss:tensor(1.4903)
+  test accuracy:tensor(0.0059)
+training epoch91
+  processed 5 batches
+  training loss:tensor(1.4410)
+applying net to test data
+  test loss:tensor(1.4868)
+  test accuracy:tensor(0.0059)
+training epoch92
+  processed 5 batches
+  training loss:tensor(1.4371)
+applying net to test data
+  test loss:tensor(1.4834)
+  test accuracy:tensor(0.0059)
+training epoch93
+  processed 5 batches
+  training loss:tensor(1.4333)
+applying net to test data
+  test loss:tensor(1.4800)
+  test accuracy:tensor(0.0059)
+training epoch94
+  processed 5 batches
+  training loss:tensor(1.4295)
+applying net to test data
+  test loss:tensor(1.4766)
+  test accuracy:tensor(0.0059)
+training epoch95
+  processed 5 batches
+  training loss:tensor(1.4258)
+applying net to test data
+  test loss:tensor(1.4732)
+  test accuracy:tensor(0.0060)
+training epoch96
+  processed 5 batches
+  training loss:tensor(1.4220)
+applying net to test data
+  test loss:tensor(1.4699)
+  test accuracy:tensor(0.0060)
+training epoch97
+  processed 5 batches
+  training loss:tensor(1.4184)
+applying net to test data
+  test loss:tensor(1.4666)
+  test accuracy:tensor(0.0060)
+training epoch98
+  processed 5 batches
+  training loss:tensor(1.4147)
+applying net to test data
+  test loss:tensor(1.4634)
+  test accuracy:tensor(0.0060)
+training epoch99
+  processed 5 batches
+  training loss:tensor(1.4111)
+applying net to test data
+  test loss:tensor(1.4602)
+  test accuracy:tensor(0.0060)
+training epoch100
+  processed 5 batches
+  training loss:tensor(1.4075)
+applying net to test data
+  test loss:tensor(1.4570)
+  test accuracy:tensor(0.0060)
+
+... Run took 1140 seconds.
+

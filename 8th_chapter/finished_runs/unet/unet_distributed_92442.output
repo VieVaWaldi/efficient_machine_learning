@@ -1,0 +1,744 @@
+submit host:
+login1
+submit dir:
+/lustre/home/cgerlach/unet_seismic_new
+nodelist:
+fj[160-167]
+Loading pytorch/arm22/1.10
+  Loading requirement: arm-modules/22.0 binutils/11.2.0 acfl/22.0.1
+    /lustre/software/arm/compiler/22.0/moduledeps/acfl/22.0.1/armpl/22.0.1
+    ucx/1.11.2 openmpi/arm22.0/4.1.2
+[fj160:1552965] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj160:1552965] MCW rank 1 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj160:1552965] MCW rank 2 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj160:1552965] MCW rank 3 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj161:1498732] MCW rank 7 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj161:1498732] MCW rank 4 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj161:1498732] MCW rank 5 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj161:1498732] MCW rank 6 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+##############################################
+# Welcome to EML's U-Net for seismic example #
+##############################################
+could not find a CUDA device
+printing configuration:
+{
+  "unet": {
+    "n_init_channels": 32,
+    "kernel_size": 3,
+    "n_layers_per_block": 2,
+    "n_levels": 2
+  },
+  "train": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          0,
+          750
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "n_epochs": 100,
+    "n_epochs_print": 5,
+    "n_batch_abort": 5000,
+    "batch_size": 16
+  },
+  "test": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          751,
+          782
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "batch_size": 8
+  }
+}
+********************
+* assembling U-Net *
+********************
+encoder:
+Sequential(
+  (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+max_pooling:
+MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+crop:
+ZeroPad2d(padding=(-4, -4, -4, -4), value=0.0)
+bottleneck:
+Sequential(
+  (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+up_sampling:
+Upsample(scale_factor=2.0, mode=bilinear)
+decoder:
+Sequential(
+  (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+classification:
+Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+*****************
+* prepping data *
+*****************
+loading training dataset
+shape padded:(1004, 750, 588)
+shape:(1, 750, 1)
+loading test data set
+shape padded:(1004, 31, 588)
+shape:(1, 31, 1)
+deriving mean and standard deviation of training data
+  mean: 0.6930369
+  std: 388.38947
+normalizing training and test data
+initializing data loaders
+************
+* training *
+************
+training epoch1
+  processed 47 batches
+  training loss:tensor(1.9750)
+applying net to test data
+  test loss:tensor(1.9911)
+  test accuracy:tensor(0.0799)
+training epoch2
+  processed 47 batches
+  training loss:tensor(1.8767)
+applying net to test data
+  test loss:tensor(1.8976)
+  test accuracy:tensor(0.1307)
+training epoch3
+  processed 47 batches
+  training loss:tensor(1.7956)
+applying net to test data
+  test loss:tensor(1.8154)
+  test accuracy:tensor(0.1697)
+training epoch4
+  processed 47 batches
+  training loss:tensor(1.7260)
+applying net to test data
+  test loss:tensor(1.7474)
+  test accuracy:tensor(0.1945)
+training epoch5
+  processed 47 batches
+  training loss:tensor(1.6645)
+applying net to test data
+  test loss:tensor(1.6894)
+  test accuracy:tensor(0.2110)
+training epoch6
+  processed 47 batches
+  training loss:tensor(1.6104)
+applying net to test data
+  test loss:tensor(1.6389)
+  test accuracy:tensor(0.2245)
+training epoch7
+  processed 47 batches
+  training loss:tensor(1.5623)
+applying net to test data
+  test loss:tensor(1.5942)
+  test accuracy:tensor(0.2341)
+training epoch8
+  processed 47 batches
+  training loss:tensor(1.5189)
+applying net to test data
+  test loss:tensor(1.5542)
+  test accuracy:tensor(0.2408)
+training epoch9
+  processed 47 batches
+  training loss:tensor(1.4796)
+applying net to test data
+  test loss:tensor(1.5182)
+  test accuracy:tensor(0.2457)
+training epoch10
+  processed 47 batches
+  training loss:tensor(1.4439)
+applying net to test data
+  test loss:tensor(1.4854)
+  test accuracy:tensor(0.2495)
+training epoch11
+  processed 47 batches
+  training loss:tensor(1.4114)
+applying net to test data
+  test loss:tensor(1.4556)
+  test accuracy:tensor(0.2525)
+training epoch12
+  processed 47 batches
+  training loss:tensor(1.3818)
+applying net to test data
+  test loss:tensor(1.4284)
+  test accuracy:tensor(0.2550)
+training epoch13
+  processed 47 batches
+  training loss:tensor(1.3545)
+applying net to test data
+  test loss:tensor(1.4035)
+  test accuracy:tensor(0.2571)
+training epoch14
+  processed 47 batches
+  training loss:tensor(1.3296)
+applying net to test data
+  test loss:tensor(1.3807)
+  test accuracy:tensor(0.2589)
+training epoch15
+  processed 47 batches
+  training loss:tensor(1.3066)
+applying net to test data
+  test loss:tensor(1.3597)
+  test accuracy:tensor(0.2606)
+training epoch16
+  processed 47 batches
+  training loss:tensor(1.2853)
+applying net to test data
+  test loss:tensor(1.3404)
+  test accuracy:tensor(0.2620)
+training epoch17
+  processed 47 batches
+  training loss:tensor(1.2657)
+applying net to test data
+  test loss:tensor(1.3226)
+  test accuracy:tensor(0.2634)
+training epoch18
+  processed 47 batches
+  training loss:tensor(1.2476)
+applying net to test data
+  test loss:tensor(1.3061)
+  test accuracy:tensor(0.2647)
+training epoch19
+  processed 47 batches
+  training loss:tensor(1.2307)
+applying net to test data
+  test loss:tensor(1.2908)
+  test accuracy:tensor(0.2658)
+training epoch20
+  processed 47 batches
+  training loss:tensor(1.2150)
+applying net to test data
+  test loss:tensor(1.2766)
+  test accuracy:tensor(0.2669)
+training epoch21
+  processed 47 batches
+  training loss:tensor(1.2004)
+applying net to test data
+  test loss:tensor(1.2634)
+  test accuracy:tensor(0.2679)
+training epoch22
+  processed 47 batches
+  training loss:tensor(1.1867)
+applying net to test data
+  test loss:tensor(1.2511)
+  test accuracy:tensor(0.2687)
+training epoch23
+  processed 47 batches
+  training loss:tensor(1.1739)
+applying net to test data
+  test loss:tensor(1.2395)
+  test accuracy:tensor(0.2695)
+training epoch24
+  processed 47 batches
+  training loss:tensor(1.1619)
+applying net to test data
+  test loss:tensor(1.2287)
+  test accuracy:tensor(0.2703)
+training epoch25
+  processed 47 batches
+  training loss:tensor(1.1505)
+applying net to test data
+  test loss:tensor(1.2186)
+  test accuracy:tensor(0.2709)
+training epoch26
+  processed 47 batches
+  training loss:tensor(1.1398)
+applying net to test data
+  test loss:tensor(1.2091)
+  test accuracy:tensor(0.2714)
+training epoch27
+  processed 47 batches
+  training loss:tensor(1.1297)
+applying net to test data
+  test loss:tensor(1.2001)
+  test accuracy:tensor(0.2721)
+training epoch28
+  processed 47 batches
+  training loss:tensor(1.1201)
+applying net to test data
+  test loss:tensor(1.1917)
+  test accuracy:tensor(0.2727)
+training epoch29
+  processed 47 batches
+  training loss:tensor(1.1110)
+applying net to test data
+  test loss:tensor(1.1837)
+  test accuracy:tensor(0.2732)
+training epoch30
+  processed 47 batches
+  training loss:tensor(1.1024)
+applying net to test data
+  test loss:tensor(1.1761)
+  test accuracy:tensor(0.2738)
+training epoch31
+  processed 47 batches
+  training loss:tensor(1.0942)
+applying net to test data
+  test loss:tensor(1.1689)
+  test accuracy:tensor(0.2743)
+training epoch32
+  processed 47 batches
+  training loss:tensor(1.0864)
+applying net to test data
+  test loss:tensor(1.1620)
+  test accuracy:tensor(0.2747)
+training epoch33
+  processed 47 batches
+  training loss:tensor(1.0789)
+applying net to test data
+  test loss:tensor(1.1556)
+  test accuracy:tensor(0.2751)
+training epoch34
+  processed 47 batches
+  training loss:tensor(1.0718)
+applying net to test data
+  test loss:tensor(1.1494)
+  test accuracy:tensor(0.2756)
+training epoch35
+  processed 47 batches
+  training loss:tensor(1.0650)
+applying net to test data
+  test loss:tensor(1.1434)
+  test accuracy:tensor(0.2760)
+training epoch36
+  processed 47 batches
+  training loss:tensor(1.0585)
+applying net to test data
+  test loss:tensor(1.1378)
+  test accuracy:tensor(0.2764)
+training epoch37
+  processed 47 batches
+  training loss:tensor(1.0522)
+applying net to test data
+  test loss:tensor(1.1324)
+  test accuracy:tensor(0.2768)
+training epoch38
+  processed 47 batches
+  training loss:tensor(1.0462)
+applying net to test data
+  test loss:tensor(1.1272)
+  test accuracy:tensor(0.2771)
+training epoch39
+  processed 47 batches
+  training loss:tensor(1.0404)
+applying net to test data
+  test loss:tensor(1.1222)
+  test accuracy:tensor(0.2775)
+training epoch40
+  processed 47 batches
+  training loss:tensor(1.0348)
+applying net to test data
+  test loss:tensor(1.1174)
+  test accuracy:tensor(0.2779)
+training epoch41
+  processed 47 batches
+  training loss:tensor(1.0295)
+applying net to test data
+  test loss:tensor(1.1127)
+  test accuracy:tensor(0.2782)
+training epoch42
+  processed 47 batches
+  training loss:tensor(1.0243)
+applying net to test data
+  test loss:tensor(1.1083)
+  test accuracy:tensor(0.2786)
+training epoch43
+  processed 47 batches
+  training loss:tensor(1.0193)
+applying net to test data
+  test loss:tensor(1.1040)
+  test accuracy:tensor(0.2790)
+training epoch44
+  processed 47 batches
+  training loss:tensor(1.0144)
+applying net to test data
+  test loss:tensor(1.0998)
+  test accuracy:tensor(0.2793)
+training epoch45
+  processed 47 batches
+  training loss:tensor(1.0098)
+applying net to test data
+  test loss:tensor(1.0958)
+  test accuracy:tensor(0.2797)
+training epoch46
+  processed 47 batches
+  training loss:tensor(1.0053)
+applying net to test data
+  test loss:tensor(1.0919)
+  test accuracy:tensor(0.2800)
+training epoch47
+  processed 47 batches
+  training loss:tensor(1.0009)
+applying net to test data
+  test loss:tensor(1.0882)
+  test accuracy:tensor(0.2804)
+training epoch48
+  processed 47 batches
+  training loss:tensor(0.9967)
+applying net to test data
+  test loss:tensor(1.0846)
+  test accuracy:tensor(0.2808)
+training epoch49
+  processed 47 batches
+  training loss:tensor(0.9926)
+applying net to test data
+  test loss:tensor(1.0811)
+  test accuracy:tensor(0.2811)
+training epoch50
+  processed 47 batches
+  training loss:tensor(0.9886)
+applying net to test data
+  test loss:tensor(1.0777)
+  test accuracy:tensor(0.2814)
+training epoch51
+  processed 47 batches
+  training loss:tensor(0.9848)
+applying net to test data
+  test loss:tensor(1.0744)
+  test accuracy:tensor(0.2819)
+training epoch52
+  processed 47 batches
+  training loss:tensor(0.9810)
+applying net to test data
+  test loss:tensor(1.0713)
+  test accuracy:tensor(0.2822)
+training epoch53
+  processed 47 batches
+  training loss:tensor(0.9774)
+applying net to test data
+  test loss:tensor(1.0682)
+  test accuracy:tensor(0.2825)
+training epoch54
+  processed 47 batches
+  training loss:tensor(0.9738)
+applying net to test data
+  test loss:tensor(1.0651)
+  test accuracy:tensor(0.2829)
+training epoch55
+  processed 47 batches
+  training loss:tensor(0.9704)
+applying net to test data
+  test loss:tensor(1.0622)
+  test accuracy:tensor(0.2832)
+training epoch56
+  processed 47 batches
+  training loss:tensor(0.9670)
+applying net to test data
+  test loss:tensor(1.0594)
+  test accuracy:tensor(0.2835)
+training epoch57
+  processed 47 batches
+  training loss:tensor(0.9637)
+applying net to test data
+  test loss:tensor(1.0566)
+  test accuracy:tensor(0.2839)
+training epoch58
+  processed 47 batches
+  training loss:tensor(0.9605)
+applying net to test data
+  test loss:tensor(1.0538)
+  test accuracy:tensor(0.2842)
+training epoch59
+  processed 47 batches
+  training loss:tensor(0.9574)
+applying net to test data
+  test loss:tensor(1.0512)
+  test accuracy:tensor(0.2845)
+training epoch60
+  processed 47 batches
+  training loss:tensor(0.9544)
+applying net to test data
+  test loss:tensor(1.0487)
+  test accuracy:tensor(0.2848)
+training epoch61
+  processed 47 batches
+  training loss:tensor(0.9514)
+applying net to test data
+  test loss:tensor(1.0461)
+  test accuracy:tensor(0.2852)
+training epoch62
+  processed 47 batches
+  training loss:tensor(0.9485)
+applying net to test data
+  test loss:tensor(1.0436)
+  test accuracy:tensor(0.2855)
+training epoch63
+  processed 47 batches
+  training loss:tensor(0.9457)
+applying net to test data
+  test loss:tensor(1.0412)
+  test accuracy:tensor(0.2859)
+training epoch64
+  processed 47 batches
+  training loss:tensor(0.9429)
+applying net to test data
+  test loss:tensor(1.0389)
+  test accuracy:tensor(0.2862)
+training epoch65
+  processed 47 batches
+  training loss:tensor(0.9402)
+applying net to test data
+  test loss:tensor(1.0366)
+  test accuracy:tensor(0.2864)
+training epoch66
+  processed 47 batches
+  training loss:tensor(0.9376)
+applying net to test data
+  test loss:tensor(1.0344)
+  test accuracy:tensor(0.2868)
+training epoch67
+  processed 47 batches
+  training loss:tensor(0.9350)
+applying net to test data
+  test loss:tensor(1.0322)
+  test accuracy:tensor(0.2871)
+training epoch68
+  processed 47 batches
+  training loss:tensor(0.9325)
+applying net to test data
+  test loss:tensor(1.0301)
+  test accuracy:tensor(0.2874)
+training epoch69
+  processed 47 batches
+  training loss:tensor(0.9300)
+applying net to test data
+  test loss:tensor(1.0280)
+  test accuracy:tensor(0.2877)
+training epoch70
+  processed 47 batches
+  training loss:tensor(0.9276)
+applying net to test data
+  test loss:tensor(1.0260)
+  test accuracy:tensor(0.2879)
+training epoch71
+  processed 47 batches
+  training loss:tensor(0.9252)
+applying net to test data
+  test loss:tensor(1.0240)
+  test accuracy:tensor(0.2881)
+training epoch72
+  processed 47 batches
+  training loss:tensor(0.9229)
+applying net to test data
+  test loss:tensor(1.0220)
+  test accuracy:tensor(0.2884)
+training epoch73
+  processed 47 batches
+  training loss:tensor(0.9206)
+applying net to test data
+  test loss:tensor(1.0201)
+  test accuracy:tensor(0.2886)
+training epoch74
+  processed 47 batches
+  training loss:tensor(0.9184)
+applying net to test data
+  test loss:tensor(1.0182)
+  test accuracy:tensor(0.2889)
+training epoch75
+  processed 47 batches
+  training loss:tensor(0.9163)
+applying net to test data
+  test loss:tensor(1.0164)
+  test accuracy:tensor(0.2891)
+training epoch76
+  processed 47 batches
+  training loss:tensor(0.9141)
+applying net to test data
+  test loss:tensor(1.0146)
+  test accuracy:tensor(0.2894)
+training epoch77
+  processed 47 batches
+  training loss:tensor(0.9121)
+applying net to test data
+  test loss:tensor(1.0129)
+  test accuracy:tensor(0.2896)
+training epoch78
+  processed 47 batches
+  training loss:tensor(0.9100)
+applying net to test data
+  test loss:tensor(1.0111)
+  test accuracy:tensor(0.2898)
+training epoch79
+  processed 47 batches
+  training loss:tensor(0.9080)
+applying net to test data
+  test loss:tensor(1.0094)
+  test accuracy:tensor(0.2901)
+training epoch80
+  processed 47 batches
+  training loss:tensor(0.9060)
+applying net to test data
+  test loss:tensor(1.0077)
+  test accuracy:tensor(0.2903)
+training epoch81
+  processed 47 batches
+  training loss:tensor(0.9041)
+applying net to test data
+  test loss:tensor(1.0061)
+  test accuracy:tensor(0.2905)
+training epoch82
+  processed 47 batches
+  training loss:tensor(0.9022)
+applying net to test data
+  test loss:tensor(1.0045)
+  test accuracy:tensor(0.2908)
+training epoch83
+  processed 47 batches
+  training loss:tensor(0.9004)
+applying net to test data
+  test loss:tensor(1.0029)
+  test accuracy:tensor(0.2909)
+training epoch84
+  processed 47 batches
+  training loss:tensor(0.8986)
+applying net to test data
+  test loss:tensor(1.0013)
+  test accuracy:tensor(0.2911)
+training epoch85
+  processed 47 batches
+  training loss:tensor(0.8968)
+applying net to test data
+  test loss:tensor(0.9998)
+  test accuracy:tensor(0.2913)
+training epoch86
+  processed 47 batches
+  training loss:tensor(0.8950)
+applying net to test data
+  test loss:tensor(0.9983)
+  test accuracy:tensor(0.2915)
+training epoch87
+  processed 47 batches
+  training loss:tensor(0.8933)
+applying net to test data
+  test loss:tensor(0.9969)
+  test accuracy:tensor(0.2917)
+training epoch88
+  processed 47 batches
+  training loss:tensor(0.8916)
+applying net to test data
+  test loss:tensor(0.9954)
+  test accuracy:tensor(0.2920)
+training epoch89
+  processed 47 batches
+  training loss:tensor(0.8899)
+applying net to test data
+  test loss:tensor(0.9940)
+  test accuracy:tensor(0.2922)
+training epoch90
+  processed 47 batches
+  training loss:tensor(0.8883)
+applying net to test data
+  test loss:tensor(0.9926)
+  test accuracy:tensor(0.2924)
+training epoch91
+  processed 47 batches
+  training loss:tensor(0.8866)
+applying net to test data
+  test loss:tensor(0.9912)
+  test accuracy:tensor(0.2927)
+training epoch92
+  processed 47 batches
+  training loss:tensor(0.8851)
+applying net to test data
+  test loss:tensor(0.9899)
+  test accuracy:tensor(0.2929)
+training epoch93
+  processed 47 batches
+  training loss:tensor(0.8835)
+applying net to test data
+  test loss:tensor(0.9886)
+  test accuracy:tensor(0.2931)
+training epoch94
+  processed 47 batches
+  training loss:tensor(0.8820)
+applying net to test data
+  test loss:tensor(0.9872)
+  test accuracy:tensor(0.2933)
+training epoch95
+  processed 47 batches
+  training loss:tensor(0.8805)
+applying net to test data
+  test loss:tensor(0.9859)
+  test accuracy:tensor(0.2935)
+training epoch96
+  processed 47 batches
+  training loss:tensor(0.8790)
+applying net to test data
+  test loss:tensor(0.9847)
+  test accuracy:tensor(0.2938)
+training epoch97
+  processed 47 batches
+  training loss:tensor(0.8775)
+applying net to test data
+  test loss:tensor(0.9834)
+  test accuracy:tensor(0.2940)
+training epoch98
+  processed 47 batches
+  training loss:tensor(0.8761)
+applying net to test data
+  test loss:tensor(0.9821)
+  test accuracy:tensor(0.2941)
+training epoch99
+  processed 47 batches
+  training loss:tensor(0.8746)
+applying net to test data
+  test loss:tensor(0.9809)
+  test accuracy:tensor(0.2943)
+training epoch100
+  processed 47 batches
+  training loss:tensor(0.8732)
+applying net to test data
+  test loss:tensor(0.9797)
+  test accuracy:tensor(0.2945)
+
+... Run took 8593 seconds.
+

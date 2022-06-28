@@ -1,1 +1,3 @@
-run_name, n_epochs, n_init_channels, n_levels, lr, l_optimizer, l_loss_func ,  final_test_accuracy, final_test_loss, time 
+run_name, n_epochs, n_init_channels, n_levels, lr, l_optimizer, l_loss_func, final_test_loss, final_test_accuracy, time 
+grid_unet_28-06-2022_11:27, 50, 60, 3, 0.0001, AdamW, CrossEntropy, 22.091379046440125, 0.7693713136048194, 3453.8995468616486 
+grid_unet_28-06-2022_11:27, 50, 60, 5, 0.0001, AdamW, CrossEntropy, 13.796401381492615, 0.8586251957217752, 3604.3282437324524 

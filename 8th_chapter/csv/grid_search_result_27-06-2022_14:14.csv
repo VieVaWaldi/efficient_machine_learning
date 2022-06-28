@@ -1,1 +1,0 @@
-run_name, n_epochs, n_init_channels, n_levels, lr, l_optimizer, l_loss_func ,  final_test_accuracy, final_test_loss, time 

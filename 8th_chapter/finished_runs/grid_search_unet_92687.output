@@ -6,3 +6,6 @@ submit dir:
 nodelist:
 fj081
 Submitted batch job 92688
+Submitted batch job 92700
+Submitted batch job 92703
+slurmstepd: error: *** JOB 92687 ON fj081 CANCELLED AT 2022-06-28T17:12:19 ***

@@ -1,5 +1,5 @@
 submit host:
-fj081
+login1
 submit dir:
 /lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter
 nodelist:
@@ -147,354 +147,354 @@ initializing data loaders
 * training *
 ************
 training epoch 1
-  processed 94 batches
-  training loss: 121.85183537006378
   new learning rate: 0.001
+  processed 94 batches
+  training loss: 124.7868127822876
 applying net to test data
-  test loss: 32.80365741252899
-  test accuracy: 0.59901772254176
+  test loss: 32.92413330078125
+  test accuracy: 0.6096523345256158
 training epoch 2
-  processed 94 batches
-  training loss: 79.52774620056152
   new learning rate: 0.0005
+  processed 94 batches
+  training loss: 84.05538100004196
 applying net to test data
-  test loss: 27.85988974571228
-  test accuracy: 0.6586303414565517
+  test loss: 29.00210267305374
+  test accuracy: 0.6307769604514586
 training epoch 3
-  processed 94 batches
-  training loss: 63.836851954460144
   new learning rate: 0.0003333333333333333
+  processed 94 batches
+  training loss: 72.25696355104446
 applying net to test data
-  test loss: 26.493073761463165
-  test accuracy: 0.6750234116930965
+  test loss: 26.99647706747055
+  test accuracy: 0.6499015170093216
 training epoch 4
-  processed 94 batches
-  training loss: 55.71537548303604
   new learning rate: 0.00025
+  processed 94 batches
+  training loss: 66.12791323661804
 applying net to test data
-  test loss: 24.566740930080414
-  test accuracy: 0.7047265240682463
+  test loss: 26.150646448135376
+  test accuracy: 0.659015284892338
 training epoch 5
-  processed 94 batches
-  training loss: 50.24444925785065
   new learning rate: 0.0002
+  processed 94 batches
+  training loss: 62.27995443344116
 applying net to test data
-  test loss: 24.220865845680237
-  test accuracy: 0.7019616971511254
+  test loss: 25.483650505542755
+  test accuracy: 0.6707848205274507
 training epoch 6
-  processed 94 batches
-  training loss: 46.2314949631691
   new learning rate: 0.00016666666666666666
+  processed 94 batches
+  training loss: 59.32303303480148
 applying net to test data
-  test loss: 23.717543840408325
-  test accuracy: 0.7132178120362238
+  test loss: 24.50012695789337
+  test accuracy: 0.681894566533174
 training epoch 7
-  processed 94 batches
-  training loss: 42.925741136074066
   new learning rate: 0.00014285714285714287
+  processed 94 batches
+  training loss: 57.60809361934662
 applying net to test data
-  test loss: 24.556296229362488
-  test accuracy: 0.7025048557585681
+  test loss: 25.2505304813385
+  test accuracy: 0.6720196438393906
 training epoch 8
-  processed 94 batches
-  training loss: 40.333242148160934
   new learning rate: 0.000125
+  processed 94 batches
+  training loss: 56.1352264881134
 applying net to test data
-  test loss: 21.57730346918106
-  test accuracy: 0.7342322185931588
+  test loss: 24.075743198394775
+  test accuracy: 0.6876224931047251
 training epoch 9
-  processed 94 batches
-  training loss: 38.40274801850319
   new learning rate: 0.00011111111111111112
+  processed 94 batches
+  training loss: 54.59410089254379
 applying net to test data
-  test loss: 22.377258777618408
-  test accuracy: 0.729009286027628
+  test loss: 24.181807816028595
+  test accuracy: 0.6860358837627146
 training epoch 10
-  processed 94 batches
-  training loss: 36.6128466129303
   new learning rate: 0.0001
+  processed 94 batches
+  training loss: 53.39254051446915
 applying net to test data
-  test loss: 20.808520197868347
-  test accuracy: 0.7469606322060873
+  test loss: 23.91526961326599
+  test accuracy: 0.6897133636924087
 training epoch 11
-  processed 94 batches
-  training loss: 35.789792627096176
   new learning rate: 9.090909090909092e-05
+  processed 94 batches
+  training loss: 52.43287914991379
 applying net to test data
-  test loss: 21.64007967710495
-  test accuracy: 0.7444077562194256
+  test loss: 23.720461905002594
+  test accuracy: 0.6933348485188959
 training epoch 12
-  processed 94 batches
-  training loss: 34.949674755334854
   new learning rate: 8.333333333333333e-05
+  processed 94 batches
+  training loss: 51.73242712020874
 applying net to test data
-  test loss: 21.691109478473663
-  test accuracy: 0.7415880333396188
+  test loss: 23.344830334186554
+  test accuracy: 0.6991155338354533
 training epoch 13
-  processed 94 batches
-  training loss: 33.236716002225876
   new learning rate: 7.692307692307693e-05
+  processed 94 batches
+  training loss: 50.8641214966774
 applying net to test data
-  test loss: 20.844788253307343
-  test accuracy: 0.7517692498585773
+  test loss: 23.000911593437195
+  test accuracy: 0.7043220403565319
 training epoch 14
-  processed 94 batches
-  training loss: 32.494388192892075
   new learning rate: 7.142857142857143e-05
+  processed 94 batches
+  training loss: 50.14679807424545
 applying net to test data
-  test loss: 24.578924357891083
-  test accuracy: 0.7178243710229432
+  test loss: 22.857960879802704
+  test accuracy: 0.7057439007471225
 training epoch 15
-  processed 94 batches
-  training loss: 31.382695645093918
   new learning rate: 6.666666666666667e-05
+  processed 94 batches
+  training loss: 49.530519902706146
 applying net to test data
-  test loss: 22.217146396636963
-  test accuracy: 0.7409068715334329
+  test loss: 23.338364124298096
+  test accuracy: 0.6995282000377128
 training epoch 16
-  processed 94 batches
-  training loss: 31.12085446715355
   new learning rate: 6.25e-05
+  processed 94 batches
+  training loss: 49.14447075128555
 applying net to test data
-  test loss: 20.41058909893036
-  test accuracy: 0.7632560621263533
+  test loss: 22.922143697738647
+  test accuracy: 0.7054895107798818
 training epoch 17
-  processed 94 batches
-  training loss: 30.131745398044586
   new learning rate: 5.882352941176471e-05
+  processed 94 batches
+  training loss: 48.67039832472801
 applying net to test data
-  test loss: 22.179421067237854
-  test accuracy: 0.7445031371913002
+  test loss: 23.23525881767273
+  test accuracy: 0.7024042844009
 training epoch 18
-  processed 94 batches
-  training loss: 29.897895842790604
   new learning rate: 5.555555555555556e-05
+  processed 94 batches
+  training loss: 48.26895472407341
 applying net to test data
-  test loss: 22.63922870159149
-  test accuracy: 0.7432333245727762
+  test loss: 23.35358887910843
+  test accuracy: 0.700378629484127
 training epoch 19
-  processed 94 batches
-  training loss: 29.47344660758972
   new learning rate: 5.2631578947368424e-05
+  processed 94 batches
+  training loss: 47.857016146183014
 applying net to test data
-  test loss: 20.355506658554077
-  test accuracy: 0.7655039266184478
+  test loss: 23.237526655197144
+  test accuracy: 0.7019214563953857
 training epoch 20
-  processed 94 batches
-  training loss: 29.033994048833847
   new learning rate: 5e-05
+  processed 94 batches
+  training loss: 47.47370111942291
 applying net to test data
-  test loss: 20.679351449012756
-  test accuracy: 0.7592697847736308
+  test loss: 22.563836634159088
+  test accuracy: 0.7114726211423832
 training epoch 21
-  processed 94 batches
-  training loss: 28.151463121175766
   new learning rate: 4.761904761904762e-05
+  processed 94 batches
+  training loss: 47.18031916022301
 applying net to test data
-  test loss: 22.304734110832214
-  test accuracy: 0.7490328174049146
+  test loss: 22.641882240772247
+  test accuracy: 0.7098529154580192
 training epoch 22
-  processed 94 batches
-  training loss: 27.309930860996246
   new learning rate: 4.545454545454546e-05
+  processed 94 batches
+  training loss: 46.82565540075302
 applying net to test data
-  test loss: 23.528124272823334
-  test accuracy: 0.7406281172846442
+  test loss: 22.38174843788147
+  test accuracy: 0.7147550211181533
 training epoch 23
-  processed 94 batches
-  training loss: 27.278266042470932
   new learning rate: 4.347826086956522e-05
+  processed 94 batches
+  training loss: 46.434862703084946
 applying net to test data
-  test loss: 20.878329873085022
-  test accuracy: 0.763852162668889
+  test loss: 23.072625637054443
+  test accuracy: 0.7052717588300065
 training epoch 24
-  processed 94 batches
-  training loss: 26.893557742238045
   new learning rate: 4.1666666666666665e-05
+  processed 94 batches
+  training loss: 46.13469260931015
 applying net to test data
-  test loss: 21.62970793247223
-  test accuracy: 0.7563363008499043
+  test loss: 22.894151985645294
+  test accuracy: 0.7082730841492213
 training epoch 25
-  processed 94 batches
-  training loss: 26.39228230714798
   new learning rate: 4e-05
+  processed 94 batches
+  training loss: 45.88425838947296
 applying net to test data
-  test loss: 20.779349386692047
-  test accuracy: 0.7645210507392575
+  test loss: 22.908084869384766
+  test accuracy: 0.7083050202876915
 training epoch 26
-  processed 94 batches
-  training loss: 26.209307819604874
   new learning rate: 3.846153846153846e-05
+  processed 94 batches
+  training loss: 45.57026866078377
 applying net to test data
-  test loss: 21.248886168003082
-  test accuracy: 0.7610174792653247
+  test loss: 22.707140922546387
+  test accuracy: 0.7106461895973433
 training epoch 27
-  processed 94 batches
-  training loss: 26.146055042743683
   new learning rate: 3.7037037037037037e-05
+  processed 94 batches
+  training loss: 45.44274681806564
 applying net to test data
-  test loss: 22.178837656974792
-  test accuracy: 0.7539186802106832
+  test loss: 22.859196960926056
+  test accuracy: 0.7090877915287042
 training epoch 28
-  processed 94 batches
-  training loss: 25.493724301457405
   new learning rate: 3.571428571428572e-05
+  processed 94 batches
+  training loss: 45.37177449464798
 applying net to test data
-  test loss: 21.442808151245117
-  test accuracy: 0.7630062519112832
+  test loss: 23.025931775569916
+  test accuracy: 0.707983582748672
 training epoch 29
-  processed 94 batches
-  training loss: 25.100984767079353
   new learning rate: 3.4482758620689657e-05
+  processed 94 batches
+  training loss: 44.868656635284424
 applying net to test data
-  test loss: 20.62835341691971
-  test accuracy: 0.7698033979562825
+  test loss: 23.142911076545715
+  test accuracy: 0.7064941252160422
 training epoch 30
-  processed 94 batches
-  training loss: 24.950444161891937
   new learning rate: 3.3333333333333335e-05
+  processed 94 batches
+  training loss: 44.75228437781334
 applying net to test data
-  test loss: 20.755474865436554
-  test accuracy: 0.7699491562020347
+  test loss: 22.92564618587494
+  test accuracy: 0.7088685740581343
 training epoch 31
-  processed 94 batches
-  training loss: 24.832573890686035
   new learning rate: 3.2258064516129034e-05
+  processed 94 batches
+  training loss: 44.5324912071228
 applying net to test data
-  test loss: 21.17102360725403
-  test accuracy: 0.7668398708583164
+  test loss: 22.06043040752411
+  test accuracy: 0.7199236683546208
 training epoch 32
-  processed 94 batches
-  training loss: 24.78918407857418
   new learning rate: 3.125e-05
+  processed 94 batches
+  training loss: 44.33393093943596
 applying net to test data
-  test loss: 23.315619587898254
-  test accuracy: 0.7521149906157825
+  test loss: 22.474190831184387
+  test accuracy: 0.7146624490609432
 training epoch 33
-  processed 94 batches
-  training loss: 24.17468187212944
   new learning rate: 3.0303030303030302e-05
+  processed 94 batches
+  training loss: 44.169389605522156
 applying net to test data
-  test loss: 22.178926944732666
-  test accuracy: 0.7601959327892669
+  test loss: 22.51787281036377
+  test accuracy: 0.714023726291539
 training epoch 34
-  processed 94 batches
-  training loss: 24.39044561982155
   new learning rate: 2.9411764705882354e-05
+  processed 94 batches
+  training loss: 43.77665337920189
 applying net to test data
-  test loss: 24.208974301815033
-  test accuracy: 0.745157247927998
+  test loss: 22.569180250167847
+  test accuracy: 0.7141253357263658
 training epoch 35
-  processed 94 batches
-  training loss: 23.4821397960186
   new learning rate: 2.857142857142857e-05
+  processed 94 batches
+  training loss: 43.71024665236473
 applying net to test data
-  test loss: 20.376452445983887
-  test accuracy: 0.7780564777480223
+  test loss: 23.11243462562561
+  test accuracy: 0.7069639467253918
 training epoch 36
-  processed 94 batches
-  training loss: 23.82868130505085
   new learning rate: 2.777777777777778e-05
+  processed 94 batches
+  training loss: 43.48720893263817
 applying net to test data
-  test loss: 22.456985235214233
-  test accuracy: 0.7608158480430902
+  test loss: 22.671896755695343
+  test accuracy: 0.7132336274470532
 training epoch 37
-  processed 94 batches
-  training loss: 23.092717468738556
   new learning rate: 2.7027027027027027e-05
+  processed 94 batches
+  training loss: 43.38790136575699
 applying net to test data
-  test loss: 24.3072629570961
-  test accuracy: 0.747750242543675
+  test loss: 22.6161008477211
+  test accuracy: 0.7139227885536972
 training epoch 38
-  processed 94 batches
-  training loss: 23.83098267018795
   new learning rate: 2.6315789473684212e-05
+  processed 94 batches
+  training loss: 43.238596737384796
 applying net to test data
-  test loss: 22.132047533988953
-  test accuracy: 0.7578975078332081
+  test loss: 22.68546360731125
+  test accuracy: 0.7137074791383129
 training epoch 39
-  processed 94 batches
-  training loss: 23.054908573627472
   new learning rate: 2.5641025641025643e-05
+  processed 94 batches
+  training loss: 43.110884964466095
 applying net to test data
-  test loss: 26.543451488018036
-  test accuracy: 0.7275959134443938
+  test loss: 22.654377043247223
+  test accuracy: 0.7141618516170067
 training epoch 40
-  processed 94 batches
-  training loss: 23.894446343183517
   new learning rate: 2.5e-05
+  processed 94 batches
+  training loss: 42.91994571685791
 applying net to test data
-  test loss: 19.728426575660706
-  test accuracy: 0.7834820796129462
+  test loss: 23.18229305744171
+  test accuracy: 0.7082222794318078
 training epoch 41
-  processed 94 batches
-  training loss: 22.834631383419037
   new learning rate: 2.4390243902439026e-05
+  processed 94 batches
+  training loss: 42.70595940947533
 applying net to test data
-  test loss: 20.09919974207878
-  test accuracy: 0.7815825816026348
+  test loss: 22.757486581802368
+  test accuracy: 0.7130366370403517
 training epoch 42
-  processed 94 batches
-  training loss: 22.779010370373726
   new learning rate: 2.380952380952381e-05
+  processed 94 batches
+  training loss: 42.78268039226532
 applying net to test data
-  test loss: 24.30996710062027
-  test accuracy: 0.749144074850981
+  test loss: 22.282990992069244
+  test accuracy: 0.7187962554969238
 training epoch 43
-  processed 94 batches
-  training loss: 22.27144330739975
   new learning rate: 2.3255813953488374e-05
+  processed 94 batches
+  training loss: 42.5568987429142
 applying net to test data
-  test loss: 21.693582475185394
-  test accuracy: 0.7688364596146462
+  test loss: 22.752029836177826
+  test accuracy: 0.7134360524929972
 training epoch 44
-  processed 94 batches
-  training loss: 22.777202934026718
   new learning rate: 2.272727272727273e-05
+  processed 94 batches
+  training loss: 42.473791748285294
 applying net to test data
-  test loss: 22.071194648742676
-  test accuracy: 0.7669182151521161
+  test loss: 21.887010633945465
+  test accuracy: 0.7237124057303813
 training epoch 45
-  processed 94 batches
-  training loss: 22.288536995649338
   new learning rate: 2.2222222222222223e-05
+  processed 94 batches
+  training loss: 42.34189063310623
 applying net to test data
-  test loss: 23.498760282993317
-  test accuracy: 0.7585216975223907
+  test loss: 22.79641556739807
+  test accuracy: 0.7133121549309398
 training epoch 46
-  processed 94 batches
-  training loss: 21.879052102565765
   new learning rate: 2.173913043478261e-05
+  processed 94 batches
+  training loss: 42.08870595693588
 applying net to test data
-  test loss: 21.040294408798218
-  test accuracy: 0.7738904909201223
+  test loss: 22.80419260263443
+  test accuracy: 0.7140162765613414
 training epoch 47
-  processed 94 batches
-  training loss: 21.787924513220787
   new learning rate: 2.1276595744680852e-05
+  processed 94 batches
+  training loss: 42.12477892637253
 applying net to test data
-  test loss: 22.33212012052536
-  test accuracy: 0.7651810235587336
+  test loss: 22.718743562698364
+  test accuracy: 0.7143930375065827
 training epoch 48
-  processed 94 batches
-  training loss: 22.354141891002655
   new learning rate: 2.0833333333333333e-05
+  processed 94 batches
+  training loss: 41.91080656647682
 applying net to test data
-  test loss: 22.753617584705353
-  test accuracy: 0.7608560887988299
+  test loss: 22.30082356929779
+  test accuracy: 0.7193620075484086
 training epoch 49
-  processed 94 batches
-  training loss: 21.505080744624138
   new learning rate: 2.0408163265306123e-05
-applying net to test data
-  test loss: 21.398902475833893
-  test accuracy: 0.7774063361298725
-training epoch 50
   processed 94 batches
-  training loss: 21.0234192609787
-  new learning rate: 2e-05
+  training loss: 41.842140436172485
 applying net to test data
-  test loss: 22.091379046440125
-  test accuracy: 0.7693713136048194
-grid_unet_28-06-2022_11:27, 50, 60, 3, 0.001->0.00001, AdamW, CrossEntropy ,  22.091379046440125, 0.7693713136048194, 3453.8995468616486 
+  test loss: 22.37538105249405
+  test accuracy: 0.7181811031853581
+training epoch 50
+  new learning rate: 2e-05
+  processed 94 batches
+  training loss: 41.723140984773636
+applying net to test data
+  test loss: 22.532807528972626
+  test accuracy: 0.7170814741574966
+grid_unet_28-06-2022_12:09, 50, 60, 3, 0.001->0.00001, AdamW, CrossEntropy ,  22.532807528972626, 0.7170814741574966, 3444.645665168762 
 

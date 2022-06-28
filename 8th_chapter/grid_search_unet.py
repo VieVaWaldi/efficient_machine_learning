@@ -57,8 +57,10 @@ for n_init_channels in range(60, 80, 5):
         run_cmd = f"sbatch unet_slurm.job {run_name} {n_epochs} {n_init_channels} {n_levels} {lr} {l_optimizer} {l_loss_func} {csv_name}"
         os.system(run_cmd)
 
-        time_hours = 2*60*60
+        time_hours = 60*60 # model runs 40 min hour on average
         time.sleep(time_hours)
 
-        # poll 
+        # i could ve polled this by putting the model run in a try catch, appending the result or error to the csv, 
+        # and canceling this/ starting a new job when the csv gets updated. 
+        # But this code is ugly and fast anyway soooo.
 

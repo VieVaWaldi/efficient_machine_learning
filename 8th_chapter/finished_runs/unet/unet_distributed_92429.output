@@ -1,0 +1,264 @@
+submit host:
+login1
+submit dir:
+/lustre/home/cgerlach/unet_seismic_new
+nodelist:
+fj[157-164]
+Loading pytorch/arm22/1.10
+  Loading requirement: arm-modules/22.0 binutils/11.2.0 acfl/22.0.1
+    /lustre/software/arm/compiler/22.0/moduledeps/acfl/22.0.1/armpl/22.0.1
+    ucx/1.11.2 openmpi/arm22.0/4.1.2
+[fj157:1614936] MCW rank 2 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj157:1614936] MCW rank 3 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj157:1614936] MCW rank 0 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+[fj157:1614936] MCW rank 1 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj158:1462515] MCW rank 5 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]], socket 1[core 16[hwt 0]], socket 1[core 17[hwt 0]], socket 1[core 18[hwt 0]], socket 1[core 19[hwt 0]], socket 1[core 20[hwt 0]], socket 1[core 21[hwt 0]], socket 1[core 22[hwt 0]], socket 1[core 23[hwt 0]]: [./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.]
+[fj158:1462515] MCW rank 6 bound to socket 2[core 24[hwt 0]], socket 2[core 25[hwt 0]], socket 2[core 26[hwt 0]], socket 2[core 27[hwt 0]], socket 2[core 28[hwt 0]], socket 2[core 29[hwt 0]], socket 2[core 30[hwt 0]], socket 2[core 31[hwt 0]], socket 2[core 32[hwt 0]], socket 2[core 33[hwt 0]], socket 2[core 34[hwt 0]], socket 2[core 35[hwt 0]]: [./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.]
+[fj158:1462515] MCW rank 7 bound to socket 3[core 36[hwt 0]], socket 3[core 37[hwt 0]], socket 3[core 38[hwt 0]], socket 3[core 39[hwt 0]], socket 3[core 40[hwt 0]], socket 3[core 41[hwt 0]], socket 3[core 42[hwt 0]], socket 3[core 43[hwt 0]], socket 3[core 44[hwt 0]], socket 3[core 45[hwt 0]], socket 3[core 46[hwt 0]], socket 3[core 47[hwt 0]]: [./././././././././././.][./././././././././././.][./././././././././././.][B/B/B/B/B/B/B/B/B/B/B/B]
+[fj158:1462515] MCW rank 4 bound to socket 0[core 0[hwt 0]], socket 0[core 1[hwt 0]], socket 0[core 2[hwt 0]], socket 0[core 3[hwt 0]], socket 0[core 4[hwt 0]], socket 0[core 5[hwt 0]], socket 0[core 6[hwt 0]], socket 0[core 7[hwt 0]], socket 0[core 8[hwt 0]], socket 0[core 9[hwt 0]], socket 0[core 10[hwt 0]], socket 0[core 11[hwt 0]]: [B/B/B/B/B/B/B/B/B/B/B/B][./././././././././././.][./././././././././././.][./././././././././././.]
+##############################################
+# Welcome to EML's U-Net for seismic example #
+##############################################
+could not find a CUDA device
+printing configuration:
+{
+  "unet": {
+    "n_init_channels": 32,
+    "kernel_size": 3,
+    "n_layers_per_block": 2,
+    "n_levels": 2
+  },
+  "train": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          0,
+          750
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "n_epochs": 20,
+    "n_epochs_print": 5,
+    "n_batch_abort": 5000,
+    "batch_size": 16
+  },
+  "test": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          751,
+          782
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "batch_size": 8
+  }
+}
+********************
+* assembling U-Net *
+********************
+encoder:
+Sequential(
+  (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+max_pooling:
+MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+crop:
+ZeroPad2d(padding=(-4, -4, -4, -4), value=0.0)
+bottleneck:
+Sequential(
+  (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+up_sampling:
+Upsample(scale_factor=2.0, mode=bilinear)
+decoder:
+Sequential(
+  (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+classification:
+Conv2d(32, 8, kernel_size=(1, 1), stride=(1, 1))
+*****************
+* prepping data *
+*****************
+loading training dataset
+shape padded:(1004, 750, 588)
+shape:(1, 750, 1)
+loading test data set
+shape padded:(1004, 31, 588)
+shape:(1, 31, 1)
+deriving mean and standard deviation of training data
+  mean: 0.6930369
+  std: 388.38947
+normalizing training and test data
+initializing data loaders
+************
+* training *
+************
+training epoch1
+  processed 47 batches
+  training loss:tensor(1.9960)
+applying net to test data
+  test loss:tensor(2.0094)
+  test accuracy:0.9019704991364911
+training epoch2
+  processed 47 batches
+  training loss:tensor(1.8938)
+applying net to test data
+  test loss:tensor(1.9054)
+  test accuracy:1.4022182271170125
+training epoch3
+  processed 47 batches
+  training loss:tensor(1.8080)
+applying net to test data
+  test loss:tensor(1.8182)
+  test accuracy:2.0288178420769514
+training epoch4
+  processed 47 batches
+  training loss:tensor(1.7353)
+applying net to test data
+  test loss:tensor(1.7469)
+  test accuracy:2.623481781376518
+training epoch5
+  processed 47 batches
+  training loss:tensor(1.6719)
+applying net to test data
+  test loss:tensor(1.6871)
+  test accuracy:3.1108370374564704
+training epoch6
+  processed 47 batches
+  training loss:tensor(1.6161)
+applying net to test data
+  test loss:tensor(1.6352)
+  test accuracy:3.45276535205685
+training epoch7
+  processed 47 batches
+  training loss:tensor(1.5663)
+applying net to test data
+  test loss:tensor(1.5892)
+  test accuracy:3.6617097477421363
+training epoch8
+  processed 47 batches
+  training loss:tensor(1.5216)
+applying net to test data
+  test loss:tensor(1.5484)
+  test accuracy:3.795564253560205
+training epoch9
+  processed 47 batches
+  training loss:tensor(1.4811)
+applying net to test data
+  test loss:tensor(1.5116)
+  test accuracy:3.8949456414031314
+training epoch10
+  processed 47 batches
+  training loss:tensor(1.4442)
+applying net to test data
+  test loss:tensor(1.4783)
+  test accuracy:3.9707220916735086
+training epoch11
+  processed 47 batches
+  training loss:tensor(1.4107)
+applying net to test data
+  test loss:tensor(1.4481)
+  test accuracy:4.030555476911752
+training epoch12
+  processed 47 batches
+  training loss:tensor(1.3800)
+applying net to test data
+  test loss:tensor(1.4206)
+  test accuracy:4.077453922595623
+training epoch13
+  processed 47 batches
+  training loss:tensor(1.3520)
+applying net to test data
+  test loss:tensor(1.3956)
+  test accuracy:4.114538801279692
+training epoch14
+  processed 47 batches
+  training loss:tensor(1.3263)
+applying net to test data
+  test loss:tensor(1.3729)
+  test accuracy:4.145232298066306
+training epoch15
+  processed 47 batches
+  training loss:tensor(1.3026)
+applying net to test data
+  test loss:tensor(1.3520)
+  test accuracy:4.171696724328303
+training epoch16
+  processed 47 batches
+  training loss:tensor(1.2808)
+applying net to test data
+  test loss:tensor(1.3329)
+  test accuracy:4.196303190736389
+training epoch17
+  processed 47 batches
+  training loss:tensor(1.2607)
+applying net to test data
+  test loss:tensor(1.3153)
+  test accuracy:4.218071402281929
+training epoch18
+  processed 47 batches
+  training loss:tensor(1.2420)
+applying net to test data
+  test loss:tensor(1.2990)
+  test accuracy:4.237142917810934
+training epoch19
+  processed 47 batches
+  training loss:tensor(1.2247)
+applying net to test data
+  test loss:tensor(1.2839)
+  test accuracy:4.2547103706010585
+training epoch20
+  processed 47 batches
+  training loss:tensor(1.2086)
+applying net to test data
+  test loss:tensor(1.2700)
+  test accuracy:4.270030576710739
+
+... Run took 1822 seconds.
+

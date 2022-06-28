@@ -27,4 +27,7 @@ Hello, each task in the assignments are their own self contained project and hav
 
 **/8th_chapter:** Seismic Facies Identification
 
-* stuff is in there wip
+* Grid search in ```8th_chapter```, as well as unet for gpus with adaptive learning rate in ```unet_seismic```, and in ```unet_seismic_mpi``` a distributed versions for multiple cpus.
+* Csv results with set parameters in ```csv```, and model as well as job outputs in ```finished_runs```.
+* ```grid_unet_slurm.jobs``` starts a job for the python script ```grid_search_unet.py```, which starts jobs for each given config.
+* The written results as well as colleced csv's can be accessed here: https://drive.google.com/drive/folders/1_nF_B8RYWzZm-Y12cWkUOkggTKbpNgG7?usp=sharing
