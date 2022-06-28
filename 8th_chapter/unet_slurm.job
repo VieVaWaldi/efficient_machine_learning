@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+#SBATCH --job-name=unet_distributed
+#SBATCH --output=finished_runs/unet/unet_%j.output
+#SBATCH -p milan-64core
+#SBATCH -N 1
+#SBATCH --cpus-per-task=12
+#SBATCH --time=01:00:00
+
+echo "submit host:"
+echo $SLURM_SUBMIT_HOST
+echo "submit dir:"
+echo $SLURM_SUBMIT_DIR
+echo "nodelist:"
+echo $SLURM_JOB_NODELIST
+
+cd $HOME/code/efficient_machine_learning/8th_chapter/unet_seismic
+
+module load anaconda
+source /lustre/software/Anaconda3/x86_64/etc/profile.d/conda.sh
+conda activate /lustre/projects/breuer-group/conda_abreuer/pytorch_milan
+
+module load nvidia/cuda11.0/nvhpc/21.5
+
+export PYTHONUNBUFFERED=TRUE
+python unet_seismic.py $1 $2 $3 $4 $5 $6 $7 $8

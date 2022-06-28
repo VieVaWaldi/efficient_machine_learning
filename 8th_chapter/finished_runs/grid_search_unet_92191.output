@@ -1,0 +1,31 @@
+Starting grid search for unet!
+submit host:
+login1
+submit dir:
+/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter
+nodelist:
+fj087
+Submitted batch job 92192
+Submitted batch job 92203
+Submitted batch job 92208
+Submitted batch job 92213
+Submitted batch job 92230
+Submitted batch job 92253
+Submitted batch job 92262
+Submitted batch job 92264
+Submitted batch job 92266
+Submitted batch job 92325
+Submitted batch job 92341
+Submitted batch job 92352
+Submitted batch job 92356
+Submitted batch job 92370
+Submitted batch job 92377
+Submitted batch job 92381
+Submitted batch job 92396
+Submitted batch job 92420
+Submitted batch job 92430
+Submitted batch job 92440
+Submitted batch job 92443
+Submitted batch job 92446
+Submitted batch job 92453
+slurmstepd: error: *** JOB 92191 ON fj087 CANCELLED AT 2022-06-26T14:30:12 DUE TO TIME LIMIT ***

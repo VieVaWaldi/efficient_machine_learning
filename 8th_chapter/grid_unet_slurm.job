@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+#SBATCH --job-name=unet_distributed
+#SBATCH --output=finished_runs/grid_search_unet_%j.output
+#SBATCH -p long
+#SBATCH -N 1
+#SBATCH --time=46:00:00
+
+echo Starting grid search for unet!
+
+echo "submit host:"
+echo $SLURM_SUBMIT_HOST
+echo "submit dir:"
+echo $SLURM_SUBMIT_DIR
+echo "nodelist:"
+echo $SLURM_JOB_NODELIST
+
+cd $HOME/code/efficient_machine_learning/8th_chapter/
+
+python grid_search_unet.py

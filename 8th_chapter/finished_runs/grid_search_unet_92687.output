@@ -1,0 +1,8 @@
+Starting grid search for unet!
+submit host:
+login1
+submit dir:
+/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter
+nodelist:
+fj081
+Submitted batch job 92688

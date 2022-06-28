@@ -1,0 +1,484 @@
+submit host:
+fj087
+submit dir:
+/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter
+nodelist:
+fj-epyc
+##############################################
+# Welcome to EML's U-Net for seismic example #
+##############################################
+CUDA devices: 2
+   Tesla V100-PCIE-32GB
+   Tesla V100-PCIE-32GB
+printing configuration:
+{
+  "unet": {
+    "n_init_channels": 40,
+    "kernel_size": 3,
+    "n_layers_per_block": 2,
+    "n_levels": 5
+  },
+  "train": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          0,
+          750
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "n_epochs": 50,
+    "n_epochs_print": 20,
+    "n_batch_abort": 5000,
+    "batch_size": 8
+  },
+  "test": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          751,
+          782
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "batch_size": 1
+  }
+}
+********************
+* assembling U-Net *
+********************
+encoder:
+Sequential(
+  (0): Conv2d(1, 40, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(40, 40, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+Sequential(
+  (0): Conv2d(40, 80, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(80, 80, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+Sequential(
+  (0): Conv2d(80, 160, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+Sequential(
+  (0): Conv2d(160, 320, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+max_pooling:
+MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+crop:
+ZeroPad2d((-88, -88, -88, -88))
+ZeroPad2d((-40, -40, -40, -40))
+ZeroPad2d((-16, -16, -16, -16))
+ZeroPad2d((-4, -4, -4, -4))
+bottleneck:
+Sequential(
+  (0): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(320, 320, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+up_sampling:
+Upsample(scale_factor=2.0, mode=bilinear)
+decoder:
+Sequential(
+  (0): Conv2d(80, 40, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(40, 40, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+Sequential(
+  (0): Conv2d(160, 40, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(40, 40, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+Sequential(
+  (0): Conv2d(320, 80, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(80, 80, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+Sequential(
+  (0): Conv2d(640, 160, kernel_size=(3, 3), stride=(1, 1))
+  (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (2): ReLU(inplace=True)
+  (3): Conv2d(160, 160, kernel_size=(3, 3), stride=(1, 1))
+  (4): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (5): ReLU(inplace=True)
+)
+classification:
+Conv2d(40, 8, kernel_size=(1, 1), stride=(1, 1))
+*****************
+* prepping data *
+*****************
+loading training dataset
+shape padded: (1004, 750, 588)
+shape: (1, 750, 1)
+loading test data set
+shape padded: (1004, 31, 588)
+shape: (1, 31, 1)
+deriving mean and standard deviation of training data
+  mean: 0.6930369
+  std: 388.38947
+normalizing training and test data
+initializing data loaders
+************
+* training *
+************
+training epoch 1
+  processed 94 batches
+  training loss: 191.6690752506256
+applying net to test data
+  test loss: 64.06608510017395
+  test accuracy: 0.14939530735134882
+training epoch 2
+  processed 94 batches
+  training loss: 191.56051421165466
+applying net to test data
+  test loss: 64.03361964225769
+  test accuracy: 0.15035317556145858
+training epoch 3
+  processed 94 batches
+  training loss: 191.43133807182312
+applying net to test data
+  test loss: 63.998051166534424
+  test accuracy: 0.15142088166330403
+training epoch 4
+  processed 94 batches
+  training loss: 191.28509664535522
+applying net to test data
+  test loss: 63.95931887626648
+  test accuracy: 0.1526297800905189
+training epoch 5
+  processed 94 batches
+  training loss: 191.12955594062805
+applying net to test data
+  test loss: 63.91744565963745
+  test accuracy: 0.15392037531841304
+training epoch 6
+  processed 94 batches
+  training loss: 190.9578185081482
+applying net to test data
+  test loss: 63.87246084213257
+  test accuracy: 0.1553322011980899
+training epoch 7
+  processed 94 batches
+  training loss: 190.7619879245758
+applying net to test data
+  test loss: 63.8239860534668
+  test accuracy: 0.15684179059133294
+training epoch 8
+  processed 94 batches
+  training loss: 190.53810453414917
+applying net to test data
+  test loss: 63.770979166030884
+  test accuracy: 0.15857514547678214
+training epoch 9
+  processed 94 batches
+  training loss: 190.29388976097107
+applying net to test data
+  test loss: 63.71422243118286
+  test accuracy: 0.16053664768522485
+training epoch 10
+  processed 94 batches
+  training loss: 190.03882908821106
+applying net to test data
+  test loss: 63.6529860496521
+  test accuracy: 0.16272230488194375
+training epoch 11
+  processed 94 batches
+  training loss: 189.76766049861908
+applying net to test data
+  test loss: 63.588324785232544
+  test accuracy: 0.16521186638726815
+training epoch 12
+  processed 94 batches
+  training loss: 189.48439049720764
+applying net to test data
+  test loss: 63.520164489746094
+  test accuracy: 0.1680557719422611
+training epoch 13
+  processed 94 batches
+  training loss: 189.19552433490753
+applying net to test data
+  test loss: 63.448869943618774
+  test accuracy: 0.17123824695608822
+training epoch 14
+  processed 94 batches
+  training loss: 188.90377342700958
+applying net to test data
+  test loss: 63.37719368934631
+  test accuracy: 0.1745661987520546
+training epoch 15
+  processed 94 batches
+  training loss: 188.63618087768555
+applying net to test data
+  test loss: 63.30451416969299
+  test accuracy: 0.17790680917029547
+training epoch 16
+  processed 94 batches
+  training loss: 188.3680934906006
+applying net to test data
+  test loss: 63.232964277267456
+  test accuracy: 0.18120720411931043
+training epoch 17
+  processed 94 batches
+  training loss: 188.11559438705444
+applying net to test data
+  test loss: 63.163384675979614
+  test accuracy: 0.18439737168051976
+training epoch 18
+  processed 94 batches
+  training loss: 187.88157427310944
+applying net to test data
+  test loss: 63.09473371505737
+  test accuracy: 0.18747916196025582
+training epoch 19
+  processed 94 batches
+  training loss: 187.6474348306656
+applying net to test data
+  test loss: 63.026580572128296
+  test accuracy: 0.1905028199515467
+training epoch 20
+  processed 94 batches
+  training loss: 187.4126033782959
+applying net to test data
+  test loss: 62.95936608314514
+  test accuracy: 0.19353592322253468
+training epoch 21
+  processed 94 batches
+  training loss: 187.1977574825287
+applying net to test data
+  test loss: 62.892995834350586
+  test accuracy: 0.19646736801925668
+training epoch 22
+  processed 94 batches
+  training loss: 186.98213827610016
+applying net to test data
+  test loss: 62.825908184051514
+  test accuracy: 0.19945188165551408
+training epoch 23
+  processed 94 batches
+  training loss: 186.76525902748108
+applying net to test data
+  test loss: 62.76088905334473
+  test accuracy: 0.2022865366788449
+training epoch 24
+  processed 94 batches
+  training loss: 186.5514761209488
+applying net to test data
+  test loss: 62.69491982460022
+  test accuracy: 0.20520133051857506
+training epoch 25
+  processed 94 batches
+  training loss: 186.3336262702942
+applying net to test data
+  test loss: 62.62923240661621
+  test accuracy: 0.20807814849148173
+training epoch 26
+  processed 94 batches
+  training loss: 186.13237416744232
+applying net to test data
+  test loss: 62.56338453292847
+  test accuracy: 0.21094824765718115
+training epoch 27
+  processed 94 batches
+  training loss: 185.93449997901917
+applying net to test data
+  test loss: 62.49800705909729
+  test accuracy: 0.21376819920387002
+training epoch 28
+  processed 94 batches
+  training loss: 185.71648240089417
+applying net to test data
+  test loss: 62.43266820907593
+  test accuracy: 0.2166451145507942
+training epoch 29
+  processed 94 batches
+  training loss: 185.51559114456177
+applying net to test data
+  test loss: 62.36636662483215
+  test accuracy: 0.21957032741039642
+training epoch 30
+  processed 94 batches
+  training loss: 185.30378091335297
+applying net to test data
+  test loss: 62.30120849609375
+  test accuracy: 0.222411603866917
+training epoch 31
+  processed 94 batches
+  training loss: 185.07951283454895
+applying net to test data
+  test loss: 62.235366344451904
+  test accuracy: 0.22531042836777776
+training epoch 32
+  processed 94 batches
+  training loss: 184.88488233089447
+applying net to test data
+  test loss: 62.16907572746277
+  test accuracy: 0.22820944761667356
+training epoch 33
+  processed 94 batches
+  training loss: 184.6630562543869
+applying net to test data
+  test loss: 62.103188037872314
+  test accuracy: 0.23111859376338892
+training epoch 34
+  processed 94 batches
+  training loss: 184.46034216880798
+applying net to test data
+  test loss: 62.0377721786499
+  test accuracy: 0.23396308356248685
+training epoch 35
+  processed 94 batches
+  training loss: 184.2666037082672
+applying net to test data
+  test loss: 61.97129547595978
+  test accuracy: 0.2368907307725265
+training epoch 36
+  processed 94 batches
+  training loss: 184.04315757751465
+applying net to test data
+  test loss: 61.90537476539612
+  test accuracy: 0.23975781134368354
+training epoch 37
+  processed 94 batches
+  training loss: 183.84027576446533
+applying net to test data
+  test loss: 61.83880615234375
+  test accuracy: 0.24271243115656962
+training epoch 38
+  processed 94 batches
+  training loss: 183.62245762348175
+applying net to test data
+  test loss: 61.77266836166382
+  test accuracy: 0.24559217035000117
+training epoch 39
+  processed 94 batches
+  training loss: 183.4260858297348
+applying net to test data
+  test loss: 61.70585882663727
+  test accuracy: 0.24853198931222784
+training epoch 40
+  processed 94 batches
+  training loss: 183.20659828186035
+applying net to test data
+  test loss: 61.639344573020935
+  test accuracy: 0.25145837066004006
+training epoch 41
+  processed 94 batches
+  training loss: 182.9851289987564
+applying net to test data
+  test loss: 61.572548389434814
+  test accuracy: 0.25444804511922475
+training epoch 42
+  processed 94 batches
+  training loss: 182.777130484581
+applying net to test data
+  test loss: 61.50559079647064
+  test accuracy: 0.25739779623123604
+training epoch 43
+  processed 94 batches
+  training loss: 182.56704235076904
+applying net to test data
+  test loss: 61.43878924846649
+  test accuracy: 0.2603387836816726
+training epoch 44
+  processed 94 batches
+  training loss: 182.36099588871002
+applying net to test data
+  test loss: 61.37252414226532
+  test accuracy: 0.2633075227270957
+training epoch 45
+  processed 94 batches
+  training loss: 182.14106619358063
+applying net to test data
+  test loss: 61.305670380592346
+  test accuracy: 0.26621043693669133
+training epoch 46
+  processed 94 batches
+  training loss: 181.95280838012695
+applying net to test data
+  test loss: 61.23825919628143
+  test accuracy: 0.2691557088438978
+training epoch 47
+  processed 94 batches
+  training loss: 181.73716938495636
+applying net to test data
+  test loss: 61.17077898979187
+  test accuracy: 0.27206290751026324
+training epoch 48
+  processed 94 batches
+  training loss: 181.519549369812
+applying net to test data
+  test loss: 61.10389459133148
+  test accuracy: 0.2749777987240109
+training epoch 49
+  processed 94 batches
+  training loss: 181.3092201948166
+applying net to test data
+  test loss: 61.03679609298706
+  test accuracy: 0.27793310015501943
+training epoch 50
+  processed 94 batches
+  training loss: 181.1084794998169
+applying net to test data
+  test loss: 60.97016084194183
+  test accuracy: 0.28082540059670796
+grid_unet_26-06-2022_20:19, 50, 40, 5, 0.0001, Adadelta, CrossEntropy ,  60.97016084194183, 0.28082540059670796, 2257.063337087631 
+

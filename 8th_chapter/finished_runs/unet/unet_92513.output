@@ -1,0 +1,89 @@
+submit host:
+fj087
+submit dir:
+/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter
+nodelist:
+fj-epyc
+##############################################
+# Welcome to EML's U-Net for seismic example #
+##############################################
+CUDA devices: 2
+   Tesla V100-PCIE-32GB
+   Tesla V100-PCIE-32GB
+printing configuration:
+{
+  "unet": {
+    "n_init_channels": 40,
+    "kernel_size": 3,
+    "n_layers_per_block": 2,
+    "n_levels": 6
+  },
+  "train": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          0,
+          750
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "n_epochs": 50,
+    "n_epochs_print": 20,
+    "n_batch_abort": 5000,
+    "batch_size": 8
+  },
+  "test": {
+    "data": {
+      "seismic": "data/data_train.npz",
+      "labels": "data/labels_train.npz",
+      "sample_shape": [
+        1004,
+        1,
+        588
+      ],
+      "subset": [
+        [
+          0,
+          1004
+        ],
+        [
+          751,
+          782
+        ],
+        [
+          0,
+          588
+        ]
+      ]
+    },
+    "batch_size": 1
+  }
+}
+********************
+* assembling U-Net *
+********************
+Traceback (most recent call last):
+  File "/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter/unet_seismic/unet_seismic.py", line 79, in <module>
+    l_unet2d = eml.unet.model.Unet2d( i_n_init_channels    = l_config['unet']['n_init_channels'],
+  File "/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter/unet_seismic/eml/unet/model.py", line 105, in __init__
+    self.m_padding = self.getPadding()
+  File "/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter/unet_seismic/eml/unet/model.py", line 36, in getPadding
+    l_tmp = self.forward( l_tmp )
+  File "/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter/unet_seismic/eml/unet/model.py", line 168, in forward
+    l_tmp = torch.cat( (l_tmp, l_tmp_encoder[l_le]),
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 46 but got size 47 for tensor number 1 in the list.

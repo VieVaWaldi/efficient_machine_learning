@@ -20,8 +20,11 @@ Hello, each task in the assignments are their own self contained project and hav
 
 * 6.2 and 6.3, code is running the test, but the tests are failing :(
 
-**/7th_chapter:** Distributed Deep Learning
+**/7th_chapter:** Distributed Deep Learning
 
 * 7.1 in 7_1_task
 * 7.2 in mlp_fashion_mnist. Results in RESULTS_7_2.md
 
+**/8th_chapter:** Seismic Facies Identification
+
+* stuff is in there wip

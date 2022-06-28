@@ -1,0 +1,2 @@
+run_name, n_epochs, n_init_channels, n_levels, lr, l_optimizer, l_loss_func ,  final_test_accuracy, final_test_loss, time 
+grid_unet_26-06-2022_19:35, 50, 40, 3, 0.0001, Adadelta, CrossEntropy ,  64.42560458183289, 0.15174294376210887, 2262.650943040848 

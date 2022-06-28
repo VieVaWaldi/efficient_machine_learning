@@ -1,0 +1,9 @@
+Starting grid search for unet!
+submit host:
+login1
+submit dir:
+/lustre/home/wehrenberger/code/efficient_machine_learning/8th_chapter
+nodelist:
+fj087
+Submitted batch job 92556
+slurmstepd: error: *** JOB 92555 ON fj087 CANCELLED AT 2022-06-27T14:17:05 ***
